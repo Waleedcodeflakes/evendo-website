@@ -13,15 +13,15 @@ const AllVendors = () => {
         <h2 className='poppins-semibold text-[32px] text-[#333]'>Finally, All Your Vendors in One Beautiful Dashboard</h2>
         <p className='poppins-medium text-lg text-[#333333CC] w-[50%] text-center'>Plan smarter, manage seamlessly, and deliver events with confidence. <br/> Our platform brings every tool you need into one place.</p>
         <section className='relative'>
-        <div className='w-full flex items-center justify-between gap-[64px]'>
-            <div className='w-[50%] relative'>
-                <div className='absolute right-16 top-12 z-10'>
+        <div className='w-full block sm:flex items-center justify-between gap-[64px]'>
+            <div className='w-full sm:w-[50%] relative my-[2rem] sm:my-0'>
+                <div className='absolute right-0 top-0 sm:right-16 sm:top-12 z-10'>
                     <img className='w-full' src={chats} alt="image" />
                 </div>
                 <div className="absolute w-[278px] h-[208px] top-18 right-16 rounded-full bg-[#3A85FC9E] blur-[214px]"></div>
                 <img className='w-full' src={firstSection} alt="image" />
             </div>
-            <div className='w-[50%] flex flex-col justify-center relative'>
+            <div className='w-full sm:w-[50%] flex flex-col justify-center relative'>
                 <div className="absolute w-[293px] h-[281px] top-0 right-5 rounded-full bg-[#A465FD66] blur-[144px]"></div>
                 <p className='poppins-medium text-sm text-[#3182ED]'>Seamless Vendor Communication</p>
                 <h3 className='poppins-semibold text-[30px] text-[#333]'>One Inbox, Zero Chaos</h3>

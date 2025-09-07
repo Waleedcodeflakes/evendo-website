@@ -3,8 +3,8 @@ import React from 'react'
 const FeaturesLeft = ({img, title, desc, smallText}) => {
   return (
     <section className='relative'>
-        <div className='w-full flex-wrap sm:flex items-center justify-between gap-[64px]'>
-            <div className='w-full sm:w-[50%]'>
+        <div className='w-full block sm:flex items-center justify-between gap-[64px]'>
+            <div className='w-full sm:w-[50%] mb-[2rem] sm:mb-0'>
                 <img className='w-full' src={img} alt="image" />
             </div>
             <div className='w-full sm:w-[50%] flex flex-col justify-center'>
