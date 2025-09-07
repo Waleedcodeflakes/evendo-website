@@ -48,7 +48,7 @@ const KeyFeatures = () => {
                 <div key={feature.id} className="flex flex-col items-start gap-6 py-5 px-6 rounded-[12px]" style={{backgroundColor: feature.bgColor}}>
                     <img className='w-10 h-10' src={feature.icon} alt={feature.title} />
                     <h3 className='poppins-medium text-[20px] text-[#333333E5]'>{feature.title}</h3>
-                    <ul className='list-disc list-inside poppins-regular text-[#333333CC] text-base w-[60%]'>
+                    <ul className='list-disc list-inside poppins-regular text-[#333333CC] text-base w-full sm:w-[60%]'>
                         {feature.bullets.map((bullet, index) => (
                             <li key={index} className='mb-2'>{bullet}</li>
                         ))}

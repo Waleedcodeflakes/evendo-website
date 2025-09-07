@@ -68,9 +68,9 @@ const Challenges = () => {
         <div className="absolute w-[393px] h-[281px] top-0 right-0 rounded-full bg-[#A465FD66] blur-[184px]"></div>
         </div>
         {/* channelges and solutions */}
-        <div className='w-full flex items-center justify-between py-30 gap-4'>
-            <div className='w-[43%]'>
-                <h2 className='poppins-semibold text-[32px] text-[#333]'>The Challenges You Face</h2>
+        <div className='w-full block sm:flex items-center justify-between py-30 gap-4'>
+            <div className='w-full sm:w-[43%]'>
+                <h2 className='poppins-semibold text-center sm:text-left text-[32px] text-[#333]'>The Challenges You Face</h2>
                 {challenges.map((challenge) => (
                     <div key={challenge.id} className={`rounded-[12px] min-h-[118px] px-4 py-3 flex items-start mt-7 justify-start ${challenge.type === 'meidium' ? 'bg-[#EAE7F9]' : challenge.type === 'danger' ? 'bg-[#ED00591F]' : 'bg-[#17C6661F]'}`}>
                         <div className='flex gap-2 items-start py-4'>
@@ -80,15 +80,15 @@ const Challenges = () => {
                     </div>
                 ))} 
             </div>
-            <div className='w-[17%] flex flex-col items-between justify-between mt-26' style={{height: '-webkit-fill-available'}}>
+            <div className='w-[17%] hidden sm:flex flex-col items-between justify-between mt-26' style={{height: '-webkit-fill-available'}}>
                 <img className='h-[97px] w-[218px] py-0' src={curve} alt="curve line" />
                 <img className='h-[97px] w-[218px] py-0' src={curveLeft} alt="curve line" />
                 <img className='h-[97px] w-[218px] py-0' src={curve} alt="curve line" />
                 <img className='h-[97px] w-[218px] py-0' src={curveLeft} alt="curve line" />
                 <img className='h-[97px] w-[218px] py-0' src={curve} alt="curve line" />
             </div>
-            <div className='w-[43%]'>
-                <h2 className='poppins-semibold text-[32px] text-[#333]'>How Evendo Transforms Them</h2>
+            <div className='w-full sm:w-[43%] mt-10 sm:mt-0'>
+                <h2 className='poppins-semibold text-center sm:text-left text-[32px] text-[#333]'>How Evendo Transforms Them</h2>
                 {solutions.map((challenge) => (
                     <div key={challenge.id} className={`rounded-[12px] min-h-[118px] px-4 py-3 flex items-start mt-7 justify-start ${challenge.type === 'meidium' ? 'bg-[#EAE7F9]' : challenge.type === 'danger' ? 'bg-[#ED00591F]' : 'bg-[#17C6661F]'}`}>
                         <div className='flex gap-2 items-start py-4'>

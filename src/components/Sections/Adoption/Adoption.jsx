@@ -4,7 +4,7 @@ import clock from '../../../assets/icons/clock.svg'
 
 const Adoption = () => {
   return (
-        <section className='w-[92%] m-auto text-center py-[64px] bg-[#3182ED] my-30'>
+        <section className='w-[92%] m-auto text-center py-[64px] bg-[#3182ED] my-30 px-4'>
         <div className='w-full flex justify-center'>
             <img src={clock} alt="icon" />
         </div>

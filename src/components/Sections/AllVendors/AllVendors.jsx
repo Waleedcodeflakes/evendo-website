@@ -10,8 +10,8 @@ import handoffs from '../../../assets/img/handoffs.svg'
 const AllVendors = () => {
   return (
     <div className='w-[92%] m-auto flex flex-col items-center justify-center'>
-        <h2 className='poppins-semibold text-[32px] text-[#333]'>Finally, All Your Vendors in One Beautiful Dashboard</h2>
-        <p className='poppins-medium text-lg text-[#333333CC] w-[50%] text-center'>Plan smarter, manage seamlessly, and deliver events with confidence. <br/> Our platform brings every tool you need into one place.</p>
+        <h2 className='poppins-semibold text-[32px] text-center text-[#333]'>Finally, All Your Vendors in One Beautiful Dashboard</h2>
+        <p className='poppins-medium text-lg text-[#333333CC] w-full sm:w-[50%] text-center'>Plan smarter, manage seamlessly, and deliver events with confidence. <br/> Our platform brings every tool you need into one place.</p>
         <section className='relative'>
         <div className='w-full block sm:flex items-center justify-between gap-[64px]'>
             <div className='w-full sm:w-[50%] relative my-[2rem] sm:my-0'>

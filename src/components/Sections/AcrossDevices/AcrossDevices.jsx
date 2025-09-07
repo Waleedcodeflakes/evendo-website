@@ -5,7 +5,7 @@ import evendoResponsive from '../../../assets/img/evendoResponsive.svg'
 const AcrossDevices = () => {
   return (
     <section className='w-[92%] m-auto'>
-        <div className='w-full block sm:flex items-center justify-between gap-[64px] py-10 pl-10'>
+        <div className='w-full block sm:flex items-center justify-between gap-[64px] py-10 pl-0 sm:pl-10'>
             <div className='w-full sm:w-[50%] border-l-[5px] border-[#f2f4f7] mb-[2rem] sm:mb-0'>
                 <div className='pl-5 relative'>
                     <div className='h-full w-[5px] bg-[#3182ED] absolute left-[-5px] top-0'></div>
