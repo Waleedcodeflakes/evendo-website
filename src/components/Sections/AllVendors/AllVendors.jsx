@@ -1,0 +1,60 @@
+import React from 'react'
+import FeaturesLeft from '../FeaturesLeft/FeaturesLeft'
+import FeaturesRight from '../FeaturesRight/FeaturesRight'
+import firstSection from '../../../assets/img/young-model.svg'
+import chats from '../../../assets/img/chats.svg'
+import invoices from '../../../assets/img/invoices.svg'
+import memoryBank from '../../../assets/img/memoryBank.svg'
+import handoffs from '../../../assets/img/handoffs.svg'
+
+const AllVendors = () => {
+  return (
+    <div className='w-[92%] m-auto flex flex-col items-center justify-center'>
+        <h2 className='poppins-semibold text-[32px] text-[#333]'>Finally, All Your Vendors in One Beautiful Dashboard</h2>
+        <p className='poppins-medium text-lg text-[#333333CC] w-[50%] text-center'>Plan smarter, manage seamlessly, and deliver events with confidence. <br/> Our platform brings every tool you need into one place.</p>
+        <section className='relative'>
+        <div className='w-full flex items-center justify-between gap-[64px]'>
+            <div className='w-[50%] relative'>
+                <div className='absolute right-16 top-12 z-10'>
+                    <img className='w-full' src={chats} alt="image" />
+                </div>
+                <div className="absolute w-[278px] h-[208px] top-18 right-16 rounded-full bg-[#3A85FC9E] blur-[214px]"></div>
+                <img className='w-full' src={firstSection} alt="image" />
+            </div>
+            <div className='w-[50%] flex flex-col justify-center relative'>
+                <div className="absolute w-[293px] h-[281px] top-0 right-5 rounded-full bg-[#A465FD66] blur-[144px]"></div>
+                <p className='poppins-medium text-sm text-[#3182ED]'>Seamless Vendor Communication</p>
+                <h3 className='poppins-semibold text-[30px] text-[#333]'>One Inbox, Zero Chaos</h3>
+                <p className='poppins-medium text-[20px] text-[#333333CC] w-[90%]'>Never lose another vendor message. Email, WhatsApp, calls, contracts - everything lives in one organized conversation thread per vendor</p>
+            </div>
+        </div>
+        </section>
+        <div className='flex flex-col gap-[150px] my-[150px]'>
+        {/* invoices */}
+        <FeaturesRight
+            img={invoices}
+            smallText = "Smart Budget Management"
+            title= "Invoice Intelligence"
+            desc="Automatically track payments, due dates, and vendor costs. See your entire event budget in real-time without switching spreadsheets. "
+        />
+        
+        {/* memory bank */}
+        <FeaturesLeft
+            img={memoryBank}
+            smallText = "Smart Vendor Management"
+            title= "Vendor Memory Bank"
+            desc="Vendor Memory Bank Every quote, conversation, and performance note saved forever. Plan your next event in minutes, not weeks, using your complete vendor history."
+        />
+        {/* handoffs */}
+        <FeaturesRight
+            img={handoffs}
+            smallText = "Smart Budget Management"
+            title= "Seamless Handoffs"
+            desc={`Share vendor relationships with your team instantly. No more "wait, who was our caterer last time?" moments.`}
+        />
+        </div>
+    </div>
+  )
+}
+
+export default AllVendors
