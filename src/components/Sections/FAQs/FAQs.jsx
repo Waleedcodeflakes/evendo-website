@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
+import { motion as MOTION, AnimatePresence } from 'framer-motion';
+import { useInView } from "react-intersection-observer";
 import minus from '../../../assets/icons/minus-circle.svg'
 import plus from '../../../assets/icons/plus-circle.svg'
 
-const FAQs = () => {
+const FAQs = ({my}) => {
 
    const faqs = [
   {
@@ -48,17 +50,45 @@ const [openIndex, setOpenIndex] = useState(null);
     setOpenIndex(openIndex === index ? null : index);
   };
 
+   const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    // Framer motion variants for staggered animation
+    const container = {
+        hidden: {},
+        visible: {
+            transition: {
+            staggerChildren: 0.3, // gap between cards
+            },
+        },
+    };
+
+    const item = {
+        hidden: { y: 50, opacity: 0 },
+        visible: { y: 0, opacity: 1 },
+    };
+
   return (
-    <section className='w-[92%] m-auto my-30'>
+    <section className='w-[92%] m-auto' style={{marginTop: my ? my : 'my-30', marginBottom: my ? my : 'my-30'}}>
       <div className='text-center'>
         <h3 className='my-1 poppins-semibold text-[26px] md:text-[36px] text-[#101828]'>Frequently asked questions</h3>
         <p className='poppins-regular text-[18px] md:text-xl text-[#475467]'>Everything you need to know about the product and billing.</p>
       </div>
       {/* faqs */}
-         <div className="w-[95%] md:w-[65%] m-auto mt-8">
+      <AnimatePresence>
+         <MOTION.div
+            ref={ref}
+            variants={container}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+         className="w-[95%] md:w-[65%] m-auto mt-8">
         {faqs.map((faq, index) => (
-            <div
-            key={index}
+            <AnimatePresence key={index}>
+            <MOTION.div
+            ref={ref}
+            variants={item}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             onClick={() => toggleFAQ(index)}
             className={`rounded-lg mb-2 cursor-pointer transition-colors duration-300 ${
                 openIndex === index ? "bg-[#3182ED14]" : "bg-[#fff]"
@@ -83,9 +113,11 @@ const [openIndex, setOpenIndex] = useState(null);
             >
                 <p style={{textAlign: 'left'}} className="text-[#475467] px-8 pb-9 pt-5 poppins-regular text-[16px] leading-relaxed">{faq.answer}</p>
             </div>
-            </div>
+            </MOTION.div>
+            </AnimatePresence>
         ))}
-        </div>
+        </MOTION.div>
+      </AnimatePresence>
     </section>
   )
 }

@@ -1,7 +1,15 @@
 import React from 'react'
+import { motion as MOTION, AnimatePresence } from 'framer-motion';
+import { useInView } from "react-intersection-observer";
 import mediaForm from '../../../assets/img/mediaLast.svg'
 
 const QuestionForm = () => {
+
+  const { ref, inView } = useInView({
+          triggerOnce: true,
+          threshold: 0.2,
+      });
+
   return (
     <section className='w-[92%] m-auto my-25'>
       <div className='text-center'>
@@ -9,7 +17,15 @@ const QuestionForm = () => {
         <p className='poppins-regular text-[18px] md:text-xl text-[#333333]'>Our team is here to answer your questions and guide you through getting started.</p>
       </div>
       <div className='flex w-[70%] m-auto justify-between mt-10'>
-        <div className='w-full md:w-[40%]'>
+        {/* form animation */}
+        <AnimatePresence>
+        <MOTION.div
+        ref={ref}
+        animate={inView ? { x: 0, opacity: 1 } : {}}
+        transition={{ duration: 1, ease: "easeOut" }}
+        initial={{ x: -100, opacity: 0 }} 
+        exit={{ x: -100, opacity: 0 }}
+        className='w-full md:w-[40%]'>
             <form className="space-y-4">
                 <label htmlFor="name" className="text-sm poppins-medium text-[#333333] pb-3">First Name</label>
                 <div className='mt-2 mb-6 border border-[#33333380] rounded-[20px] py-3 px-4 w-full'>
@@ -46,10 +62,20 @@ const QuestionForm = () => {
                 Submit
                 </button>
             </form>
-        </div>
-        <div className='hidden md:block w-[40%]'>
+        </MOTION.div>
+        </AnimatePresence>
+        {/* image animation */}
+        <AnimatePresence>
+        <MOTION.div
+        ref={ref}
+        initial={{ x: 100, opacity: 0 }} 
+        animate={inView ? { x: 0, opacity: 1 } : {}}
+        exit={{ y: -100, opacity: 0 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        className='hidden md:block w-[40%]'>
             <img src={mediaForm} alt="image" />
-        </div>
+        </MOTION.div>
+        </AnimatePresence>
       </div>
     </section>
   )

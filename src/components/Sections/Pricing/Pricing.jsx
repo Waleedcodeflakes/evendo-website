@@ -1,10 +1,12 @@
 import React from 'react'
+import { motion as MOTION, AnimatePresence } from 'framer-motion';
+import { useInView } from "react-intersection-observer";
 import zap from '../../../assets/icons/zap.svg'
 import layers from '../../../assets/icons/layers.svg'
 import tickBlue from '../../../assets/icons/Check icon.svg'
 // import tickGrey from '../../../assets/icons/icon-grey.svg'
 
-const Pricing = () => {
+const Pricing = ({bgColor}) => {
     
     const plans = [
         {
@@ -44,18 +46,48 @@ const Pricing = () => {
         },
     ];
 
+     const { ref, inView } = useInView({
+            triggerOnce: true,
+            threshold: 0.2,
+        });
+        // Framer motion variants for staggered animation
+        const container = {
+            hidden: {},
+            visible: {
+                transition: {
+                staggerChildren: 0.3, // gap between cards
+                },
+            },
+        };
+    
+        const item = {
+            hidden: { y: 100, opacity: 0 },
+            visible: { y: 0, opacity: 1 },
+        };
+
   return (
-    <section className='w-[92%] m-auto my-30'>
+    <section className='w-[92%] m-auto my-30' style={{backgroundColor: bgColor ? bgColor : 'transparent'}}>
         <div className='text-center'>
             <p className='poppins-medium text-sm text-[#3182ED]'>Pricing</p>
             <h3 className='my-1 poppins-semibold text-[30px] md:text-[48px] text-[#333]'>Plans that fit your scale</h3>
             <p className='poppins-regular text-[18px] md:text-xl text-[#475467]'>Simple, transparent pricing that grows with you. Try any plan free for 15 days.</p>
         </div>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-center w-full justify-between my-15'>
+        <AnimatePresence>
+        <MOTION.div
+            ref={ref}
+            variants={container}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+        className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-center w-full justify-between my-15'>
             {plans.map((plan) => (
-                <div key={plan.id} className={`rounded-[8px] w-full relative text-center p-8 ${plan.isActive ? 'bg-[#3182ED1F] border border-[#3182ED]' : 'bg-[#F9FAFB]'}`}>
+                <AnimatePresence key={plan.id}>
+                <MOTION.div 
+                    ref={ref}
+                    variants={item}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                className={`rounded-[8px] w-full relative text-center p-8 ${plan.isActive ? 'bg-[#3182ED1F] border border-[#3182ED]' : 'bg-[#F9FAFB]'}`}>
                     <div className='flex justify-center'>
-                        <div className='absolute top-[-20px] bg-white rounded-full flex items-center justify-center w-12 h-12 border-[8px] border-[#3182ED14]'>
+                        <div className='absolute top-[-22px] opacity-80 bg-white rounded-full flex items-center justify-center w-12 h-12 border-[8px] border-[#3182ED14]'>
                             <img src={plan.icon} alt={plan.title} />
                         </div>
                     </div>
@@ -75,9 +107,11 @@ const Pricing = () => {
                     <div>
                         <button className='text-white poppins-semibold text-[14px] md:text-[16px] py-3 w-full rounded-[8px] mt-10 bg-[#3182ED]'>Get started</button>
                     </div>
-                </div>
+                </MOTION.div>
+                </AnimatePresence>
             ))}
-        </div>
+        </MOTION.div>
+        </AnimatePresence>
     </section>
   )
 }

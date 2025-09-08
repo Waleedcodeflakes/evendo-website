@@ -22,7 +22,11 @@ const HomePage = () => {
       <AllVendors/>
       <AcrossDevices/>
       <KeyFeatures/>
-      <Adoption/>
+      <Adoption 
+        heading="No Extra Cost for Vendors! Easy Adoption"
+        text="Save up to 15+ hours per event by streamlining vendor communication and management."
+        btnText="See How it Works"
+      />
       <Demo/>
       <Pricing/>
       <FAQs />

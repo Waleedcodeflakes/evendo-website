@@ -1,11 +1,18 @@
 import React from 'react'
+import { motion as MOTION, useInView } from 'framer-motion';
 import question from '../../../assets/icons/circle-ques.svg'
 import tick from '../../../assets/icons/tick-circle.svg'
 import curve from '../../../assets/icons/curveLine.svg'
 import curveLeft from '../../../assets/icons/curveLeft.svg'
+import AnimatedCard from '../AnimatedCard/AnimatedCard';
 
 
 const Challenges = () => {
+
+    const { ref, inView } = useInView({
+        triggerOnce: true, // animate only first time (optional)
+        threshold: 0.2,    // 20% of the section visible = trigger
+    });
 
     const challenges = [
         {
@@ -72,30 +79,51 @@ const Challenges = () => {
             <div className='w-full sm:w-[43%]'>
                 <h2 className='poppins-semibold text-center sm:text-left text-[32px] text-[#333]'>The Challenges You Face</h2>
                 {challenges.map((challenge) => (
-                    <div key={challenge.id} className={`rounded-[12px] min-h-[118px] px-4 py-3 flex items-start mt-7 justify-start ${challenge.type === 'meidium' ? 'bg-[#EAE7F9]' : challenge.type === 'danger' ? 'bg-[#ED00591F]' : 'bg-[#17C6661F]'}`}>
+                    <AnimatedCard key={challenge.id} delay={challenge.id * 0.2}>
+                    <div className={`rounded-[12px] min-h-[118px] px-4 py-3 flex items-start mt-7 justify-start ${challenge.type === 'meidium' ? 'bg-[#EAE7F9]' : challenge.type === 'danger' ? 'bg-[#ED00591F]' : 'bg-[#17C6661F]'}`}>
                         <div className='flex gap-2 items-start py-4'>
                             <img src={question} alt="icon" />
                         <p className='text-lg poppins-regular text-[#333333CC] w-[85%]'>{challenge.text}</p>
                         </div>
                     </div>
+                    </AnimatedCard>
                 ))} 
             </div>
-            <div className='w-[17%] hidden sm:flex flex-col items-between justify-between mt-26' style={{height: '-webkit-fill-available'}}>
-                <img className='h-[97px] w-[218px] py-0' src={curve} alt="curve line" />
-                <img className='h-[97px] w-[218px] py-0' src={curveLeft} alt="curve line" />
-                <img className='h-[97px] w-[218px] py-0' src={curve} alt="curve line" />
-                <img className='h-[97px] w-[218px] py-0' src={curveLeft} alt="curve line" />
-                <img className='h-[97px] w-[218px] py-0' src={curve} alt="curve line" />
-            </div>
+            {/* vertical line with curve */}
+            {/* <AnimatedCard delay={0.3}> */}
+            <div className="w-[17%] hidden sm:flex flex-col justify-between mt-26" style={{ height: '-webkit-fill-available' }}>
+  {[
+                    { id: 1, src: curve },
+                    { id: 2, src: curveLeft },
+                    { id: 3, src: curve },
+                    { id: 4, src: curveLeft },
+                    { id: 5, src: curve },
+                ].map((item, index) => (
+                    <AnimatedCard key={item.id} delay={index * 0.2}>
+                    <img className="h-[97px] w-[218px]" src={item.src} alt="curve line" />
+                    </AnimatedCard>
+                ))}
+                </div>
+            {/* </AnimatedCard> */}
+            {/* solutions */}
             <div className='w-full sm:w-[43%] mt-10 sm:mt-0'>
                 <h2 className='poppins-semibold text-center sm:text-left text-[32px] text-[#333]'>How Evendo Transforms Them</h2>
                 {solutions.map((challenge) => (
-                    <div key={challenge.id} className={`rounded-[12px] min-h-[118px] px-4 py-3 flex items-start mt-7 justify-start ${challenge.type === 'meidium' ? 'bg-[#EAE7F9]' : challenge.type === 'danger' ? 'bg-[#ED00591F]' : 'bg-[#17C6661F]'}`}>
+                    <AnimatedCard key={challenge.id} delay={challenge.id * 0.2}>
+                    <div 
+
+                    ref={ref}
+                        initial={{ x: -200, opacity: 0 }}
+                        animate={inView ? { x: 0, opacity: 1 } : {}} // run when visible
+                        transition={{ duration: 1, ease: "easeOut" }} 
+
+                    key={challenge.id} className={`rounded-[12px] min-h-[118px] px-4 py-3 flex items-start mt-7 justify-start ${challenge.type === 'meidium' ? 'bg-[#EAE7F9]' : challenge.type === 'danger' ? 'bg-[#ED00591F]' : 'bg-[#17C6661F]'}`}>
                         <div className='flex gap-2 items-start py-4'>
                             <img src={tick  } alt="icon" />
                         <p className='text-lg poppins-regular text-[#333333CC]'>{challenge.text}</p>
                         </div>
                     </div>
+                    </AnimatedCard>
                 ))}
             </div>
             

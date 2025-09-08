@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion as MOTION, AnimatePresence } from 'framer-motion';
+import { useInView } from "react-intersection-observer";
 import hub from '../../../assets/img/hub.svg'
 import finance from '../../../assets/img/finance.svg'
 import marketing from '../../../assets/img/marketing.svg'
@@ -36,6 +38,26 @@ const KeyFeatures = () => {
 
         },
     ]
+
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    // Framer motion variants for staggered animation
+    const container = {
+        hidden: {},
+        visible: {
+            transition: {
+            staggerChildren: 0.3, // gap between cards
+            },
+        },
+    };
+
+    const item = {
+        hidden: { y: 50, opacity: 0 },
+        visible: { y: 0, opacity: 1 },
+    };
+
   return (
     <section className='my-30'>
         <div className='w-[92%] m-auto flex flex-col items-center justify-center mb-[44px]'>
@@ -43,19 +65,32 @@ const KeyFeatures = () => {
             <p className='poppins-medium text-lg text-[#333333CC] w-full sm:w-[48%] text-center'>Plan smarter, manage seamlessly, and deliver events with confidence. Our platform brings every tool you need into one place.</p>
         </div>
         {/* features grid */}
-        <div className='w-[92%] m-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-20'>
-            {features.map((feature) => (
-                <div key={feature.id} className="flex flex-col items-start gap-6 py-5 px-6 rounded-[12px]" style={{backgroundColor: feature.bgColor}}>
-                    <img className='w-10 h-10' src={feature.icon} alt={feature.title} />
-                    <h3 className='poppins-medium text-[20px] text-[#333333E5]'>{feature.title}</h3>
-                    <ul className='list-disc list-inside poppins-regular text-[#333333CC] text-base w-full sm:w-[60%]'>
-                        {feature.bullets.map((bullet, index) => (
-                            <li key={index} className='mb-2'>{bullet}</li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
-        </div>
+        <AnimatePresence>
+            <MOTION.div 
+                ref={ref}
+                variants={container}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+            className='w-[92%] m-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-20'>
+                {features.map((feature) => (
+                    <AnimatePresence key={feature.id}>
+                    <MOTION.div
+                    ref={ref}
+                    variants={item}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                     className="flex flex-col items-start gap-6 py-5 px-6 rounded-[12px]" style={{backgroundColor: feature.bgColor}}>
+                        <img className='w-10 h-10' src={feature.icon} alt={feature.title} />
+                        <h3 className='poppins-medium text-[20px] text-[#333333E5]'>{feature.title}</h3>
+                        <ul className='list-disc list-inside poppins-regular text-[#333333CC] text-base w-full sm:w-[60%]'>
+                            {feature.bullets.map((bullet, index) => (
+                                <li key={index} className='mb-2'>{bullet}</li>
+                            ))}
+                        </ul>
+                    </MOTION.div>
+                    </AnimatePresence>
+                ))}
+            </MOTION.div>
+        </AnimatePresence>
     </section>
   )
 }
