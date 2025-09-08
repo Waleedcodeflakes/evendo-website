@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef} from 'react'
 import Navbar from '../../Sections/Navbar/Navbar';
 import Hero from '../../Sections/Hero/Hero';
 import Challenges from '../../Sections/Challenges/Challenges';
@@ -14,10 +14,11 @@ import Footer from '../../Sections/Footer/Footer';
 
 
 const HomePage = () => {
+  const targetRef = useRef(null);
   return (
     <div>
       <Navbar/>
-      <Hero/>
+      <Hero onScroll={() => targetRef.current.scrollIntoView({ behavior: "smooth" })} />
       <Challenges/>
       <AllVendors/>
       <AcrossDevices/>
@@ -27,7 +28,9 @@ const HomePage = () => {
         text="Save up to 15+ hours per event by streamlining vendor communication and management."
         btnText="See How it Works"
       />
-      <Demo/>
+      <div ref={targetRef}>
+        <Demo/>
+      </div>
       <Pricing/>
       <FAQs />
       <QuestionForm/>

@@ -10,7 +10,7 @@ import tickSignup from '../../../assets/icons/tickSubmit.svg'
 import tickEmp from '../../../assets/icons/tick-circle-emp.svg'
 import { X } from 'lucide-react'
 
-const Hero = () => {
+const Hero = ({onScroll}) => {
 
   const [signup, setSignup] = useState(false)
   const [form, setForm] = useState(true)
@@ -61,7 +61,10 @@ const Hero = () => {
                 </div>
               ))}
             </div>
-            <button onClick={() => setSignup(true)} className="bg-[#FFFFFF14] text-white poppins-medium border border-[#FFFFFF] py-3 px-5 text-lg rounded-lg transition">Free Early Sign-up</button>
+            <div className='flex items-center gap-3'>
+              <button onClick={() => setSignup(true)} className="bg-[#FFFFFF14] cursor-pointer text-white poppins-medium border border-[#FFFFFF] py-3 px-5 text-lg rounded-lg transition">Free Early Sign-up</button>
+              <button onClick={onScroll} className="bg-[#FFFFFF14] cursor-pointer text-white poppins-medium border border-[#FFFFFF] py-3 px-5 text-lg rounded-lg transition">Try Demo</button>
+            </div>
           </MOTION.div>
           </AnimatePresence>
           {/* Right Side Signup Form */}
