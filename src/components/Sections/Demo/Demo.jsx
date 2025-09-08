@@ -20,14 +20,14 @@ const Demo = () => {
         <AnimatePresence>
         <MOTION.div
             ref={ref}
-            initial={{ y: 100, opacity: 0 }} 
-            exit={{ y: -100, opacity: 0 }}
+            initial={{ y: 50, opacity: 0 }} 
+            exit={{ y: -50, opacity: 0 }}
             animate={inView ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 1, ease: "easeInOut" }}
         className='w-full relative mt-[44px]'>
             <div className='absolute bg-[#0000004D] w-full h-full backdrop-blur-[16px]'></div>
                 <img className='w-full' src={video} alt="video" />
-            <button className='absolute top-[35%] sm:top-[40%] left-[40%] sm:left-[45%]'>
+            <button className='absolute top-[37%] left-[43%] sm:top-[40%] sm:left-[45%]'>
                 <img className='bg-white  rounded-full w-[50%] sm:w-full' src={play} alt="icon" />
             </button>
         </MOTION.div>

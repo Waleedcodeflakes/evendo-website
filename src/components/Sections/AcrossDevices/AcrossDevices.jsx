@@ -19,8 +19,8 @@ const AcrossDevices = () => {
                     ref={ref}
                     animate={inView ? { x: 0, opacity: 1 } : {}}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    initial={{ x: -100, opacity: 0 }} 
-                    exit={{ x: -100, opacity: 0 }}
+                    initial={{ x: -50, opacity: 0 }} 
+                    exit={{ x: -50, opacity: 0 }}
                 className='w-full sm:w-[50%] border-l-[5px] border-[#f2f4f7] mb-[2rem] sm:mb-0'>
                     <div className='pl-5 relative'>
                         <div className='h-full w-[5px] bg-[#3182ED] absolute left-[-5px] top-0'></div>
@@ -41,9 +41,9 @@ const AcrossDevices = () => {
             <AnimatePresence>
                 <MOTION.div
                     ref={ref}
-                    initial={{ x: 100, opacity: 0 }} 
+                    initial={{ x: 50, opacity: 0 }} 
                     animate={inView ? { x: 0, opacity: 1 } : {}}
-                    exit={{ y: -100, opacity: 0 }}
+                    exit={{ y: -50, opacity: 0 }}
                     transition={{ duration: 1, ease: "easeInOut" }}
                 className='w-full sm:w-[50%] relative'>
                 <div className="absolute w-[393px] h-[281px] top-0 right-5 rounded-full bg-[#A465FD66] blur-[214px]"></div>

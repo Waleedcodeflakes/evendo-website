@@ -94,15 +94,15 @@ const [openIndex, setOpenIndex] = useState(null);
                 openIndex === index ? "bg-[#3182ED14]" : "bg-[#fff]"
             }`}
             >
-            <div className="flex py-8 px-4 sm:px-8 items-start gap-6 sm:items-center text-black text-[18px] poppins-medium" style={{textAlign: 'left'}}>
+            <div className="flex py-8 px-4 sm:px-8 items-start gap-6 sm:items-center text-black text-base sm:text-[18px] poppins-medium" style={{textAlign: 'left'}}>
                 <span
-                className={`transition-transform duration-300 ${
+                className={`transition-transform w-[8%] sm:w-fit duration-300 ${
                     openIndex === index ? "rotate-90" : "rotate-180"
                 }`}
                 >
-                {openIndex === index ? <img src={plus} alt="icon" /> : <img src={minus} alt="icon" />}
+                {openIndex === index ? <img className='w-[20px] h-[20px]' src={plus} alt="icon" /> : <img className='w-[20px] h-[20px]' src={minus} alt="icon" />}
                 </span>
-                <span>{faq.question}</span>
+                <span className='w-[92%] sm:w-fit '>{faq.question}</span>
             </div>
             <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
@@ -111,7 +111,7 @@ const [openIndex, setOpenIndex] = useState(null);
                     : "max-h-0 opacity-0"
                 }`}
             >
-                <p style={{textAlign: 'left'}} className="text-[#475467] px-8 pb-9 pt-5 poppins-regular text-[16px] leading-relaxed">{faq.answer}</p>
+                <p style={{textAlign: 'left'}} className="text-[#475467] px-8 pb-9 pt-5 poppins-regular text-sm sm:text-[16px] leading-relaxed">{faq.answer}</p>
             </div>
             </MOTION.div>
             </AnimatePresence>

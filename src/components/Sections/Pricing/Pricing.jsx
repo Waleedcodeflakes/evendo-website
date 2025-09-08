@@ -61,7 +61,7 @@ const Pricing = ({bgColor}) => {
         };
     
         const item = {
-            hidden: { y: 100, opacity: 0 },
+            hidden: { y: 50, opacity: 0 },
             visible: { y: 0, opacity: 1 },
         };
 

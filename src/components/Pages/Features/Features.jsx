@@ -74,9 +74,9 @@ const Features = () => {
             transition={{ duration: 1, ease: "easeInOut" }} 
             className='poppins-semibold text-[36px] md:text-[44px] lg:text-[54px]'>Unlock the Power of Seamless <br/><span className='text-[#3182ED]'>Event Management</span></MOTION.h2>
             <MOTION.p 
-            initial={{ y: 100, opacity: 0 }} 
+            initial={{ y: 50, opacity: 0 }} 
             animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -100, opacity: 0 }}
+            exit={{ y: -50, opacity: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
             className='poppins-semibold text-[16px] md:text-[18px] lg:text-[20px] text-[#333333CC]'>The complete platform for event companies to manage vendors, streamline communication, and deliver flawless events. Built specifically for event professionals who demand excellence.</MOTION.p>
         </div>
