@@ -15,5 +15,5 @@ export function TitleUpdater() {
     document.title = titles[location.pathname] || "Evendo";
   }, [location.pathname]);
 
-  return null; // invisible component
+  return null; // invisible component to chnage title of the page
 }

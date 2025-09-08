@@ -213,7 +213,7 @@ const Hero = () => {
       {showSubmitPopup && 
       <div className='fixed top-0 left-0 w-full h-full bg-[#00000080] backdrop-blur-[24px] overflow-hidden bg-opacity-50 flex items-center justify-center z-50 p-4'>
         <div className='bg-white rounded-[32px] p-8 max-w-[502px] w-full text-center relative'>
-          <div className='absolute right-8 top-8 cursor-pointer' onClick={() => {setshowSubmitPopup(false); setForm(false);}}>
+          <div className='absolute right-8 top-8 cursor-pointer' onClick={() => {setshowSubmitPopup(false); setSignup(false); setForm(false);}}>
             <img src={crossSignup} alt="icon" />
           </div>
           <div className='flex justify-center w-full'>

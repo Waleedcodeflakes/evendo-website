@@ -97,10 +97,10 @@ const [openIndex, setOpenIndex] = useState(null);
             <div className="flex py-8 px-4 sm:px-8 items-start gap-6 sm:items-center text-black text-base sm:text-[18px] poppins-medium" style={{textAlign: 'left'}}>
                 <span
                 className={`transition-transform w-[8%] sm:w-fit duration-300 ${
-                    openIndex === index ? "rotate-90" : "rotate-180"
+                    openIndex === index ? "rotate-0" : "rotate-90"
                 }`}
                 >
-                {openIndex === index ? <img className='w-[20px] h-[20px]' src={plus} alt="icon" /> : <img className='w-[20px] h-[20px]' src={minus} alt="icon" />}
+                {openIndex === index ? <img className='w-[20px] h-[20px]' src={minus} alt="icon" /> : <img className='w-[20px] h-[20px]' src={plus} alt="icon" />}
                 </span>
                 <span className='w-[92%] sm:w-fit '>{faq.question}</span>
             </div>

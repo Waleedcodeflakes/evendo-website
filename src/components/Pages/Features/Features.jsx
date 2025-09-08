@@ -67,7 +67,7 @@ const Features = () => {
       <Navbar/>
       <div className='bg-[#3182ED0F] text-center py-[120px]'>
         <div className='w-full sm:w-[78%] m-auto flex flex-col gap-6 px-3 sm:px-0'>
-            <MOTION.h2 
+            <MOTION.h2
             initial={{ y: 50, opacity: 0 }} 
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -50, opacity: 0 }}

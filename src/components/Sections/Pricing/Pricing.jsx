@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { motion as MOTION, AnimatePresence } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import zap from '../../../assets/icons/zap.svg'
@@ -7,11 +7,11 @@ import tickBlue from '../../../assets/icons/Check icon.svg'
 // import tickGrey from '../../../assets/icons/icon-grey.svg'
 
 const Pricing = ({bgColor}) => {
-    
+
+    const [isActive, setIsActive] = useState(false)
     const plans = [
         {
             id: 1,
-            isActive: false,
             icon: zap,
             title:'Basic',
             price: '$15/month',
@@ -21,7 +21,6 @@ const Pricing = ({bgColor}) => {
         },
         {
             id: 2,
-            isActive: true,
             icon: layers,
             title:'Pro',
             price: '$25/month',
@@ -31,7 +30,6 @@ const Pricing = ({bgColor}) => {
         },
         {
             id: 3,
-            isActive: false,
             icon: layers,
             title:'Custom',
             price: 'Flexible',
@@ -78,14 +76,14 @@ const Pricing = ({bgColor}) => {
             variants={container}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-        className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-center w-full justify-between my-15'>
+            className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-top w-full justify-between my-15'>
             {plans.map((plan) => (
                 <AnimatePresence key={plan.id}>
                 <MOTION.div 
                     ref={ref}
                     variants={item}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                className={`rounded-[8px] w-full relative text-center p-8 ${plan.isActive ? 'bg-[#3182ED1F] border border-[#3182ED]' : 'bg-[#F9FAFB]'}`}>
+                className={`rounded-[8px] w-full h-fit relative text-center p-8 transition-all duration-300 ease-in-out ${isActive === plan.id ? 'bg-[#3182ED1F] border border-[rgb(49,130,237)] mb-2 shadow-[0px_20px_25px_-5px_#0000001a]' : 'bg-[#F9FAFB] boder border-[#3182ED1F]'}`} onMouseEnter={() => setIsActive(plan.id)} onMouseLeave={() => setIsActive(false)}>
                     <div className='flex justify-center'>
                         <div className='absolute top-[-22px] opacity-80 bg-white rounded-full flex items-center justify-center w-12 h-12 border-[8px] border-[#3182ED14]'>
                             <img src={plan.icon} alt={plan.title} />
@@ -100,7 +98,7 @@ const Pricing = ({bgColor}) => {
                         {plan.plans.map((plan) => (
                             <div className='flex items-start gap-3 mt-4'>
                             <img src={tickBlue} alt="icon tick" />
-                            <p className='poppins-regular text-[14px] md:text-[16px] text-[#475467]'>{plan}</p>
+                            <p className='poppins-regular text-[14px] md:text-[16px] text-[#475467] w-[90%]'>{plan}</p>
                             </div>
                         ))}
                     </div>
