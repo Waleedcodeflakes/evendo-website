@@ -5,6 +5,7 @@ import HomePage from './components/Pages/HomePage/HomePage';
 import Features from './components/Pages/Features/Features';
 import PricingPage from './components/Pages/PricingPage/PricingPage';
 import FaqsPage from './components/Pages/FaqsPage/FaqsPage';
+import { TitleUpdater } from './components/Pages/TitleUpdater';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path='/pricing' element={<PricingPage/>} /> 
           <Route path='/faqs' element={<FaqsPage/>} /> 
       </Routes>
+      <TitleUpdater/>
     </Router>
   )
 }

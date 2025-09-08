@@ -8,6 +8,7 @@ import victory from '../../../assets/icons/victory.svg'
 import fb from '../../../assets/icons/fb.svg'
 import globe from '../../../assets/icons/globe.svg'
 import { useNavigate } from 'react-router-dom'
+import { Facebook, Linkedin, LinkedinIcon, Twitter } from 'lucide-react'
 
 const Footer = () => {
 
@@ -38,12 +39,15 @@ const Footer = () => {
             <div className='flex-wrap md:flex w-full justify-between py-8'>
                 <div><p>© 2025 Evendo. All rights reserved.</p></div>
                 <div className='flex gap-6 mt-5 sm:mt-0'>
-                    <img src={twitter} alt="social icon" />
-                    <img src={linkedin} alt="social icon" />
-                    <img src={fb} alt="social icon" />
-                    <img src={github} alt="social icon" />
-                    <img src={victory} alt="social icon" />
-                    <img src={globe} alt="social icon" />
+                    <img className='cursor-pointer' src={twitter} alt="social icon" />
+                    <img className='cursor-pointer' src={linkedin} alt="social icon" />
+                    <img className='cursor-pointer' src={fb} alt="social icon" />
+                    <img className='cursor-pointer' src={github} alt="social icon" />
+                    <img className='cursor-pointer' src={victory} alt="social icon" />
+                    <img className='cursor-pointer' src={globe} alt="social icon" />
+                    {/* <Twitter className={`cursor-pointer text-[#999999] hover:fill-[#3182ED] hover:text-[#3182ED] `} fill="#999999"  />
+                    <LinkedinIcon className={`cursor-pointer text-[#999999] hover:fill-[#3182ED] hover:text-[#3182ED] `} fill="#999999"  />
+                    <Facebook className={`cursor-pointer text-[#999999] hover:fill-[#3182ED] hover:text-[#3182ED] `} fill="#999999"  /> */}
                 </div>
             </div>
         </div>

@@ -19,12 +19,12 @@ const QuestionForm = () => {
       <div className='flex w-[70%] m-auto justify-between mt-10'>
         {/* form animation */}
         <AnimatePresence>
-        <MOTION.div
-        ref={ref}
-        animate={inView ? { x: 0, opacity: 1 } : {}}
-        transition={{ duration: 1, ease: "easeOut" }}
-        initial={{ x: -100, opacity: 0 }} 
-        exit={{ x: -100, opacity: 0 }}
+        <div
+        // ref={ref}
+        // animate={inView ? { x: 0, opacity: 1 } : {}}
+        // transition={{ duration: 1, ease: "easeOut" }}
+        // initial={{ x: -50, opacity: 0 }} 
+        // exit={{ x: -50, opacity: 0 }}
         className='w-full md:w-[40%]'>
             <form className="space-y-4">
                 <label htmlFor="name" className="text-sm poppins-medium text-[#333333] pb-3">First Name</label>
@@ -48,11 +48,6 @@ const QuestionForm = () => {
                 <label htmlFor="message" className="text-sm poppins-medium text-[#333333] pb-3">Message</label>
                 <div className='mt-2 mb-6 border border-[#33333380] rounded-[20px] py-3 px-4 w-full'>
                     <textarea name="message" id="message" placeholder="Share your queries" rows="4" className="w-full border-none outline-none text-[#000000B0] placeholder:text-[#000000B0] text-sm"></textarea>
-                    {/* <input 
-                    type="text" 
-                    placeholder="Message" 
-                    className="w-full border-none outline-none text-[#000000B0] placeholder:text-[#000000B0] text-sm"
-                    /> */}
                 </div>
                 {/* vendors */}
                 <button 
@@ -62,7 +57,7 @@ const QuestionForm = () => {
                 Submit
                 </button>
             </form>
-        </MOTION.div>
+        </div>
         </AnimatePresence>
         {/* image animation */}
         <AnimatePresence>
