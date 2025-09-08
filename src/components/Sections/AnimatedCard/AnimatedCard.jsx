@@ -13,7 +13,6 @@ const AnimatedCard = ({ children, delay = 0 }) => {
       initial={{ x: -50, opacity: 0 }}
       animate={inView ? { x: 0, opacity: 1 } : {}}
       transition={{ duration: 0.8, ease: "easeOut", delay }}
-    //   className="flex items-start mt-7 justify-start"
     >
       {children}
     </MOTION.div>

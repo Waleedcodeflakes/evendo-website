@@ -41,9 +41,9 @@ const Hero = () => {
           {/* Left Side Content */}
           <AnimatePresence>
           <MOTION.div className="text-white w-full md:w-[50%] space-y-5 "
-            initial={{ x: -50, opacity: 0 }} 
+            initial={{ x: -30, opacity: 0 }} 
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -50, opacity: 0 }}
+            exit={{ x: -30, opacity: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
           >
             <p className='poppins-medium text-sm sm:text-base text-[#3182ED] bg-[#3182ED47] px-3 py-[6px] rounded-[60px] w-fit mt-10 lg:mt-0'>Coming Soon - Early Access Available</p>
@@ -68,9 +68,9 @@ const Hero = () => {
           {form &&
           <AnimatePresence>
             <MOTION.div
-            initial={{ x: 50, opacity: 0 }} 
+            initial={{ x: 30, opacity: 0 }} 
             animate={{ x: 0, opacity: 1 }}
-            exit={{ y: -50, opacity: 0 }}
+            exit={{ y: -30, opacity: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
             className={`relative hidden md:block max-w-[40%] bg-white/40 backdrop-blur-[50px] rounded-[20px] px-8 py-12`}>
               <h2 className="text-2xl poppins-semibold text-white mb-6">Want early access? Join waitlist!</h2>

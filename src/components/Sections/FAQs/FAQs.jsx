@@ -13,34 +13,14 @@ const FAQs = ({my}) => {
       "Yes, you and your team members and the listed vendors can use the app free up to 15 days. After that, you will be charged according to the plan and cancel the subscription at any time or change the plan accordingly."
   },
   {
-    question: "Can I change my plan later?",
+    question: "What if the vendor is listed by me but no longer actively working for me. Am I charged for it?",
     answer:
-      "Our web development service includes custom design, responsive development, SEO optimization, performance optimization, security implementation, content management system setup, analytics integration, and 30 days of post-launch support."
+      "You can always change your vendor list as per your active campaigns and will be eligible to number of vendors as per your plan."
   },
   {
-    question: "What is your cancellation policy?",
+    question: "Is there a mobile app for this?",
     answer:
-      "You can cancel your subscription at any time from your account settings. Upon cancellation, you will retain access to the service until the end of your current billing cycle. We do not offer refunds for partial billing periods."
-  },
-  {
-    question: "What if the vendor is listed by me but no longer actively working for me. Am I charged for it? ",
-    answer:
-      "You can always change your vendor list as per your campaigns."
-  },
-  {
-    question: "Can other info be added to an invoice?",
-    answer:
-      "Yes, you can add your company name, address, and other details to the invoice from the account settings."
-  },
-  {
-    question: "How does billing work?",
-    answer:
-      "Billing is handled through our secure payment gateway. Invoices are generated automatically and sent to your registered email address."
-  },
-  {
-    question: "How do I change my account email?",
-    answer:
-      "You can change your account email from the account settings. An email verification will be sent to the new email address to confirm the change."
+      "Yes, you can access the app on mobile. The communication Hub gives notifications and can be used to communicate with multiple vendors. The full functionality of the app will be available on the web version."
   },
 ];
 
@@ -94,7 +74,7 @@ const [openIndex, setOpenIndex] = useState(null);
                 openIndex === index ? "bg-[#3182ED14]" : "bg-[#fff]"
             }`}
             >
-            <div className="flex py-8 px-4 sm:px-8 items-start gap-6 sm:items-center text-black text-base sm:text-[18px] poppins-medium" style={{textAlign: 'left'}}>
+            <div className="flex py-8 px-4 sm:px-8 gap-6 sm:items-center text-black text-base sm:text-[18px] poppins-medium" style={{textAlign: 'left', alignItems: 'flex-start'}}>
                 <span
                 className={`transition-transform w-[8%] sm:w-fit duration-300 ${
                     openIndex === index ? "rotate-0" : "rotate-90"
@@ -102,7 +82,7 @@ const [openIndex, setOpenIndex] = useState(null);
                 >
                 {openIndex === index ? <img className='w-[20px] h-[20px]' src={minus} alt="icon" /> : <img className='w-[20px] h-[20px]' src={plus} alt="icon" />}
                 </span>
-                <span className='w-[92%] sm:w-fit '>{faq.question}</span>
+                <span className='w-[92%] sm:w-fit'>{faq.question}</span>
             </div>
             <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
