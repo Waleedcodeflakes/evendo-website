@@ -52,7 +52,7 @@ const AcrossDevices = ({setShowSignup}) => {
             </AnimatePresence>
         </div>
         <div className='w-full flex flex-col items-center justify-center text-center my-5'>
-            <button onClick={() => setShowSignup(true)} className='text-white poppins-semibold cursor-pointer text-[14px] md:text-[16px] py-3 rounded-[8px] w-[25%] mt-10 bg-[#3182ED]'>Sign up for waitlist</button>
+            <button onClick={() => setShowSignup(true)} className='text-white poppins-semibold cursor-pointer text-[14px] md:text-[16px] py-3 rounded-[8px] w-full sm:w-[25%] mt-10 bg-[#3182ED]'>Sign up for waitlist</button>
         </div>
     </section>
   )

@@ -6,7 +6,7 @@ import layers from '../../../assets/icons/layers.svg'
 import tickBlue from '../../../assets/icons/Check icon.svg'
 import tickGrey from '../../../assets/icons/check-circle-grey.svg'
 
-const Pricing = ({bgColor, my}) => {
+const Pricing = ({bgColor, my, onScroll}) => {
 
     const [isActive, setIsActive] = useState(false)
     const plans = [
@@ -113,7 +113,7 @@ const Pricing = ({bgColor, my}) => {
                         ))}
                     </div>
                     <div>
-                        <button className='text-white poppins-semibold text-[14px] md:text-[16px] py-3 w-full rounded-[8px] mt-10 bg-[#3182ED]'>Get started</button>
+                        <button onClick={onScroll} className='text-white poppins-semibold text-[14px] md:text-[16px] py-3 w-full rounded-[8px] mt-10 bg-[#3182ED]'>Get started</button>
                     </div>
                 </MOTION.div>
                 </AnimatePresence>

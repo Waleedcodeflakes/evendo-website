@@ -33,9 +33,11 @@ const HomePage = () => {
       <div ref={targetRef}>
         <Demo/>
       </div>
-      <Pricing/>
+      <Pricing onScroll={() => questionRef.current.scrollIntoView({ behavior: "smooth" })} />
       <FAQs />
-      <QuestionForm ref={questionRef}/>
+      <div  ref={questionRef}>
+      <QuestionForm />
+      </div>
       <Footer/>
     </div>
   )
