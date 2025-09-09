@@ -6,14 +6,16 @@ import layers from '../../../assets/icons/layers.svg'
 import tickBlue from '../../../assets/icons/Check icon.svg'
 import tickGrey from '../../../assets/icons/check-circle-grey.svg'
 
-const Pricing = ({bgColor, my, onScroll}) => {
+const Pricing = ({bgColor, my, onScroll, setPackageName}) => {
 
     const [isActive, setIsActive] = useState(false)
+    // const [packageName, setPackageName] = useState('')
+    
     const plans = [
         {
             id: 1,
             icon: zap,
-            title:'Basic',
+            title:'Basic Plan',
             price: '$15/month',
             desc: 'Our most popular plan.',
             plans: ["Access to all basic features","Manage up to 10 vendors portfolio ","User access for 5 users ","10 vendors do not pay anything extra to use the app"
@@ -22,7 +24,7 @@ const Pricing = ({bgColor, my, onScroll}) => {
         {
             id: 2,
             icon: layers,
-            title:'Pro',
+            title:'Pro Plan',
             price: '$25/month',
             desc: 'Advanced features and reporting.',
             plans: ["Access to all basic features","Manage up to 20 vendors portfolio ","User access for 10 users ","20 vendors do not pay anything extra to use the app"
@@ -31,7 +33,7 @@ const Pricing = ({bgColor, my, onScroll}) => {
         {
             id: 3,
             icon: layers,
-            title:'Custom',
+            title:'Custom Plan',
             price: 'Flexible',
             desc: 'Unlimited features.',
             plans: [
@@ -91,7 +93,7 @@ const Pricing = ({bgColor, my, onScroll}) => {
                         </div>
                     </div>
                     <div className='mt-6 flex flex-col gap-3'>
-                        <h3 className='text-[#3182ED] poppins-semibold text-lg'>{plan.title} Plan</h3>
+                        <h3 className='text-[#3182ED] poppins-semibold text-lg'>{plan.title}</h3>
                         <h2 className='poppins-semibold text-[30px] md:text-[48px] text-[#333]'>{plan.price}</h2>
                             <p className='poppins-regular text-[14px] md:text-[16px] text-[#475467]'>{plan.desc}</p>
                     </div>
@@ -113,7 +115,7 @@ const Pricing = ({bgColor, my, onScroll}) => {
                         ))}
                     </div>
                     <div>
-                        <button onClick={onScroll} className='text-white poppins-semibold text-[14px] md:text-[16px] py-3 w-full rounded-[8px] mt-10 bg-[#3182ED]'>Get started</button>
+                        <button onClick={() => {onScroll; setPackageName(plan.title)}} className='text-white poppins-semibold text-[14px] md:text-[16px] py-3 w-full rounded-[8px] mt-10 bg-[#3182ED]'>Get started</button>
                     </div>
                 </MOTION.div>
                 </AnimatePresence>

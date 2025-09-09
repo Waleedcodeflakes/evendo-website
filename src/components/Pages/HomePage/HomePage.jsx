@@ -17,6 +17,8 @@ const HomePage = () => {
   const targetRef = useRef(null);
   const questionRef = useRef(null);
   const [showSignup, setShowSignup] = useState(false)
+  const [packageName, setPackageName] = useState('')
+
   return (
     <div>
       <Navbar/>
@@ -33,10 +35,10 @@ const HomePage = () => {
       <div ref={targetRef}>
         <Demo/>
       </div>
-      <Pricing onScroll={() => questionRef.current.scrollIntoView({ behavior: "smooth" })} />
+      <Pricing setPackageName={setPackageName} onScroll={() => questionRef.current.scrollIntoView({ behavior: "smooth" })} />
       <FAQs />
       <div  ref={questionRef}>
-      <QuestionForm />
+      <QuestionForm packageName={packageName} />
       </div>
       <Footer/>
     </div>

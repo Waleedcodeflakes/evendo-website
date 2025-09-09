@@ -2,26 +2,61 @@ import React, {useState} from 'react'
 import { motion as MOTION, AnimatePresence } from 'framer-motion';
 import heroBg from '../../../assets/icons/heroBg.svg'
 import user from '../../../assets/icons/user.svg'
-import email from '../../../assets/icons/email.svg'
+import emailIcon from '../../../assets/icons/email.svg'
 import hashtag from '../../../assets/icons/hashtag.svg'
 import cross from '../../../assets/icons/close-circle.svg'
 import crossSignup from '../../../assets/icons/closeSubmit.svg'
 import tickSignup from '../../../assets/icons/tickSubmit.svg'
 import tickEmp from '../../../assets/icons/tick-circle-emp.svg'
 import { X } from 'lucide-react'
+import axios from 'axios';
 
 const Hero = ({onScroll, showSignup, setShowSignup}) => {
 
   const [signup, setSignup] = useState(false)
   const [form, setForm] = useState(true)
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [noOfVendors, setNoOfVendors] = useState('')
   const [showSubmitPopup, setshowSubmitPopup] = useState(false)
 
   const texts=["Payments or follow-ups" ,"All Invoices in one place", "Vendor Memory Bank","Consolidated Communication", "Seamless Cordination", "Task Management"];
 
-  const handleSubmit = (e) => {
+
+  const api = 'https://aspbackend.hifahdevs.com/api/registerInterest/register-interest'
+
+  // handle form submission logic here
+  // setshowSubmitPopup(true);
+  // console.log({firstName, lastName, email, noOfVendors});
+  // send data to backend
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // handle form submission logic here
-    setshowSubmitPopup(true);
+    try {
+      
+     const res  = await axios.post(api, {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        noOfVendors: noOfVendors,
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+        alert("Query submitted! wait for response!")
+      // console.log("Response : ",res.data);
+
+    } catch (error) {
+      console.log( "Error : ",error);
+      
+    } finally {
+      // Clear form fields after submission
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setNoOfVendors('');
+    }
   }
 
   return (
@@ -85,6 +120,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                       <div className='flex items-center gap-2'>
                         <img src={user} alt="icon" />
                       <input 
+                      value={firstName} onChange={(e) => setFirstName(e.target.value)}
                         type="text" 
                         placeholder="First name" 
                         className="w-full border-none outline-none text-[#fff] placeholder:text-[#FFFFFFDB] text-sm"
@@ -96,6 +132,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                       <div className='flex items-center gap-2'>
                         <img src={user} alt="icon" />
                       <input 
+                      value={lastName} onChange={(e) => setLastName(e.target.value)}
                         type="text" 
                         placeholder="Last name" 
                         className="w-full border-none outline-none text-[#fff] placeholder:text-[#FFFFFFDB] text-sm"
@@ -109,9 +146,10 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                   <label htmlFor="name" className="text-base poppins-medium text-white pt-3">Email</label>
                   <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-5 mb-6'>
                       <div className='flex items-center gap-2'>
-                        <img src={email} alt="icon" />
+                        <img src={emailIcon} alt="icon" />
                       <input 
-                        type="text" 
+                      value={email} onChange={(e) => setEmail(e.target.value)}
+                        type="email" 
                         placeholder="Email" 
                         className="w-full border-none outline-none text-white placeholder:text-[#FFFFFFDB] text-sm"
                       required />
@@ -123,6 +161,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                       <div className='flex items-center gap-2'>
                         <img src={hashtag} alt="icon" />
                       <input 
+                      value={noOfVendors} onChange={(e) => setNoOfVendors(e.target.value)}
                         type="text" 
                         placeholder="No of vendors" 
                         className="w-full border-none outline-none text-white placeholder:text-[#FFFFFFDB] text-sm"
@@ -158,6 +197,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                     <div className='flex items-center gap-2'>
                       <img src={user} alt="icon" />
                     <input 
+                      value={firstName} onChange={(e) => setFirstName(e.target.value)}
                       type="text" 
                       placeholder="First name" 
                       className="w-full border-none outline-none text-[#fff] placeholder:text-[#fff] text-sm"
@@ -169,6 +209,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                     <div className='flex items-center gap-2'>
                       <img src={user} alt="icon" />
                     <input 
+                      value={lastName} onChange={(e) => setLastName(e.target.value)}
                       type="text" 
                       placeholder="Last name" 
                       className="w-full border-none outline-none text-[#fff] placeholder:text-[#fff] text-sm"
@@ -182,9 +223,10 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                 <label htmlFor="name" className="text-base poppins-medium text-[#fff] pt-3">Email</label>
                 <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-5 mb-6'>
                     <div className='flex items-center gap-2'>
-                      <img src={email} alt="icon" />
+                      <img src={emailIcon} alt="icon" />
                     <input 
-                      type="text" 
+                      value={email} onChange={(e) => setEmail(e.target.value)}
+                      type="email" 
                       placeholder="Email" 
                       className="w-full border-none outline-none text-[#fff] placeholder:text-[#fff] text-sm"
                     required />
@@ -196,6 +238,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                     <div className='flex items-center gap-2'>
                       <img src={hashtag} alt="icon" />
                     <input 
+                      value={noOfVendors} onChange={(e) => setNoOfVendors(e.target.value)}
                       type="text" 
                       placeholder="No of vendors" 
                       className="w-full border-none outline-none text-[#fff] placeholder:text-[#fff] text-sm"

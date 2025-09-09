@@ -1,14 +1,47 @@
-import React from 'react'
-import { motion as MOTION, AnimatePresence } from 'framer-motion';
-import { useInView } from "react-intersection-observer";
+import React, {useState} from 'react'
+// import { motion as MOTION, AnimatePresence } from 'framer-motion';
+// import { useInView } from "react-intersection-observer";
 import mediaForm from '../../../assets/img/mediaLast.svg'
+import axios from 'axios';
 
-const QuestionForm = () => {
+const QuestionForm = ({packageName}) => {
 
-  const { ref, inView } = useInView({
-          triggerOnce: true,
-          threshold: 0.2,
-      });
+  const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+
+  const api = 'https://aspbackend.hifahdevs.com/api/registerInterest/register-interest'
+
+  // console.log({firstName, lastName, email, packageName});
+      const handleSubmit = async (e) => {
+          e.preventDefault();
+          try {
+            
+           const res  = await axios.post(api, {
+              firstName: firstName,
+              lastName: lastName,
+              email: email,
+              message: message,
+              packageName: packageName,
+            }, {
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            });
+            alert("Query submitted! wait for response!")
+            // console.log("Response : ",res.data);
+      
+          } catch (error) {
+            console.log( "Error : ",error);
+          } finally {
+      // Clear form fields after submission
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setMessage('');
+    }
+        }
 
   return (
     <section className='w-[92%] m-auto my-25'>
@@ -18,7 +51,6 @@ const QuestionForm = () => {
       </div>
       <div className='flex w-[70%] m-auto justify-between mt-10'>
         {/* form animation */}
-        <AnimatePresence>
         <div
         // ref={ref}
         // animate={inView ? { x: 0, opacity: 1 } : {}}
@@ -32,6 +64,7 @@ const QuestionForm = () => {
                 <label htmlFor="name" className="text-sm poppins-medium text-[#333333] pb-3">First Name</label>
                 <div className='mt-2 mb-6 border border-[#33333380] rounded-[20px] py-3 px-4 w-full'>
                     <input 
+                    value={firstName} onChange={(e) => setFirstName(e.target.value)}
                     type="text" 
                     placeholder="First name" 
                     className="w-full border-none outline-none text-[#000000B0] placeholder:text-[#000000B0] text-sm"
@@ -43,6 +76,7 @@ const QuestionForm = () => {
                 <label htmlFor="name" className="text-sm poppins-medium text-[#333333] pb-3">Last Name</label>
                 <div className='mt-2 mb-6 border border-[#33333380] rounded-[20px] py-3 px-4 w-full'>
                     <input 
+                    value={lastName} onChange={(e) => setLastName(e.target.value)}
                     type="text" 
                     placeholder="Last name" 
                     className="w-full border-none outline-none text-[#000000B0] placeholder:text-[#000000B0] text-sm"
@@ -55,6 +89,7 @@ const QuestionForm = () => {
                 <label htmlFor="name" className="text-sm poppins-medium text-[#333333] pb-3">Email</label>
                 <div className='mt-2 mb-6 border border-[#33333380] rounded-[20px] py-3 px-4 w-full'>
                     <input 
+                    value={email} onChange={(e) => setEmail(e.target.value)}
                     type="email" 
                     placeholder="Email" 
                     className="w-full border-none outline-none text-[#000000B0] placeholder:text-[#000000B0] text-sm"
@@ -63,10 +98,11 @@ const QuestionForm = () => {
                 {/* messsage */}
                 <label htmlFor="message" className="text-sm poppins-medium text-[#333333] pb-3">Message</label>
                 <div className='mt-2 mb-6 border border-[#33333380] rounded-[20px] py-3 px-4 w-full'>
-                    <textarea name="message" id="message" placeholder="Share your queries" rows="4" className="w-full border-none outline-none text-[#000000B0] placeholder:text-[#000000B0] text-sm"></textarea>
+                    <textarea value={message} onChange={(e) => setMessage(e.target.value)} name="message" id="message" placeholder="Share your queries" rows="4" className="w-full border-none outline-none text-[#000000B0] placeholder:text-[#000000B0] text-sm"></textarea>
                 </div>
                 {/* vendors */}
                 <button 
+                onClick={(e) => handleSubmit(e)}
                 type="submit" 
                 className="w-fit bg-[#3182ED] text-white py-2  px-10 rounded-[48px] poppins-medium text-lg transition mt-2"
                 >
@@ -74,19 +110,11 @@ const QuestionForm = () => {
                 </button>
             </form>
         </div>
-        </AnimatePresence>
         {/* image animation */}
-        <AnimatePresence>
-        <MOTION.div
-        ref={ref}
-        initial={{ x: 100, opacity: 0 }} 
-        animate={inView ? { x: 0, opacity: 1 } : {}}
-        exit={{ y: -100, opacity: 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
+        <div
         className='hidden md:block w-[40%]'>
             <img src={mediaForm} alt="image" />
-        </MOTION.div>
-        </AnimatePresence>
+        </div>
       </div>
     </section>
   )

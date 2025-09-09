@@ -5,8 +5,8 @@ import FeaturesLeft from '../FeaturesLeft/FeaturesLeft'
 import FeaturesRight from '../FeaturesRight/FeaturesRight'
 import firstSection from '../../../assets/img/young-model.svg'
 import chats from '../../../assets/img/chats.svg'
-import invoices from '../../../assets/img/invoices.svg'
-import memoryBank from '../../../assets/img/memoryBank.svg'
+import invoices from '../../../assets/img/budget.svg'
+import memoryBank from '../../../assets/img/memoryBank2.svg'
 import handoffs from '../../../assets/img/handoffs.svg'
 
 const AllVendors = () => {
