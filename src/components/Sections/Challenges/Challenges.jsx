@@ -3,11 +3,10 @@ import { motion as MOTION, useInView } from 'framer-motion';
 import question from '../../../assets/icons/circle-ques.svg'
 import tick from '../../../assets/icons/tick-circle.svg'
 import curve from '../../../assets/icons/curveLine.svg'
-import curveLeft from '../../../assets/icons/curveLeft.svg'
 import AnimatedCard from '../AnimatedCard/AnimatedCard';
 
 
-const Challenges = () => {
+const Challenges = ({setShowSignup}) => {
 
     const { ref, inView } = useInView({
         triggerOnce: true, // animate only first time (optional)
@@ -17,39 +16,39 @@ const Challenges = () => {
     const challenges = [
         {
             id: 1,
-            text: "Juggling between spreadsheets, emails, WhatsApp, and other tools to get your tasks streamlined?",
+            text: "Juggling between spreadsheets, emails, WhatsApp, and other tools to get your tasks streamlined.",
             type: 'meidium'
         },
         {
             id: 2,
-            text: "Manually tracking which vendors confirmed, which need follow-up, and which payments are overdue?",
+            text: "Manually tracking which vendors confirmed, which need follow-up, and which payments are overdue.",
             type: 'meidium'
         },
         {
             id: 3,
-            text: "Starting from scratch for every new event because vendor history is scattered everywhere?",
+            text: "Starting from scratch for every new event because vendor history is scattered everywhere.",
             type: 'danger'
         },
         {
             id: 4,
-            text: "Multiple follow-ups to get full visibility of the budget?",
+            text: "Multiple follow-ups to get full visibility of the budget.",
             type: 'success'
         },
         {
             id: 5,
-            text: "Emails and spreadsheets to manage stakeholders and keep them informed of event progress?",
+            text: "Emails and spreadsheets to manage stakeholders and keep them informed of event progress.",
             type: 'success'
         },
     ]
     const solutions = [
         {
             id: 1,
-            text: "Consolidated platform to track budget, invoices, maintain vendor profiles and manage seamless communication.",
+            text: "Consolidated platform to track budget, invoices, maintain vendor profiles and manage seamless coordination.",
             type: 'meidium'
         },
         {
             id: 2,
-            text: "Our platform streamlines your communication with vendors with periodic notifications to keep you on track.",
+            text: "Our platform streamlines your coordination with vendors with periodic notifications to keep you on track.",
             type: 'meidium'
         },
         {
@@ -70,12 +69,12 @@ const Challenges = () => {
     ]
    
   return (
-    <section className='w-[92%] m-auto relative'>
+    <section className='w-[92%] m-auto relative py-30'>
         <div className=" w-full h-full overflow-x-hidden">
         <div className="absolute w-[393px] h-[281px] top-0 right-0 rounded-full bg-[#A465FD66] blur-[184px]"></div>
         </div>
         {/* channelges and solutions */}
-        <div className='w-full block sm:flex items-center justify-between py-30 gap-4'>
+        <div className='w-full block sm:flex items-center justify-between gap-4'>
             <div className='w-full sm:w-[43%]'>
                 <h2 className='poppins-semibold text-center sm:text-left text-[32px] text-[#333]'>The Challenges You Face</h2>
                 {challenges.map((challenge) => (
@@ -94,9 +93,9 @@ const Challenges = () => {
             <div className="w-[17%] hidden sm:flex flex-col justify-between mt-26" style={{ height: '-webkit-fill-available' }}>
   {[
                     { id: 1, src: curve },
-                    { id: 2, src: curveLeft },
+                    { id: 2, src: curve },
                     { id: 3, src: curve },
-                    { id: 4, src: curveLeft },
+                    { id: 4, src: curve },
                     { id: 5, src: curve },
                 ].map((item, index) => (
                     <AnimatedCard key={item.id} delay={index * 0.2}>
@@ -107,7 +106,7 @@ const Challenges = () => {
             {/* </AnimatedCard> */}
             {/* solutions */}
             <div className='w-full sm:w-[43%] mt-10 sm:mt-0'>
-                <h2 className='poppins-semibold text-center sm:text-left text-[32px] text-[#333]'>How Evendo Transforms Them</h2>
+                <h2 className='poppins-semibold text-center sm:text-left text-[32px] text-[#333]'>How VendComm Transforms Them</h2>
                 {solutions.map((challenge) => (
                     <AnimatedCard key={challenge.id} delay={challenge.id * 0.2}>
                     <div 
@@ -126,7 +125,9 @@ const Challenges = () => {
                     </AnimatedCard>
                 ))}
             </div>
-            
+        </div>
+        <div className='w-full flex flex-col items-center justify-center text-center my-5'>
+            <button onClick={() => setShowSignup(true)} className='text-white poppins-semibold cursor-pointer text-[14px] md:text-[16px] py-3 rounded-[8px] w-[25%] mt-10 bg-[#3182ED]'>Sign up for waitlist</button>
         </div>
     </section>
   )

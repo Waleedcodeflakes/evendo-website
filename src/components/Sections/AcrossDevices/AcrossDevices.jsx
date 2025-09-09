@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import evendoResponsive from '../../../assets/img/evendoResponsive.svg'
 
 
-const AcrossDevices = () => {
+const AcrossDevices = ({setShowSignup}) => {
 
     const { ref, inView } = useInView({
               triggerOnce: true,
@@ -50,6 +50,9 @@ const AcrossDevices = () => {
                     <img src={evendoResponsive} alt="media" />
                 </MOTION.div>
             </AnimatePresence>
+        </div>
+        <div className='w-full flex flex-col items-center justify-center text-center my-5'>
+            <button onClick={() => setShowSignup(true)} className='text-white poppins-semibold cursor-pointer text-[14px] md:text-[16px] py-3 rounded-[8px] w-[25%] mt-10 bg-[#3182ED]'>Sign up for waitlist</button>
         </div>
     </section>
   )

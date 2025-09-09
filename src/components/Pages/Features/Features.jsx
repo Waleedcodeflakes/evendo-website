@@ -112,14 +112,12 @@ const Features = () => {
         <h2 className='poppins-semibold text-[24px] md:text-[26px] lg:text-[32px] text-[#333333]'>Secure, Compliant, and Reliable</h2>
         <p className='poppins-medium text-[18px] text-[#333333CC] mb-2 w-full sm:w-[80%]'>EventFlow prioritizes the security and reliability of your data. We adhere to industry-leading security standards and compliance regulations to ensure your events run smoothly and your information is protected.</p>
       </div>
-      {/* <div className='my-0'> */}
       <Adoption 
-        heading="No Extra Cost for Vendors! Easy Adoption"
-        text="Save up to 15+ hours per event by streamlining vendor communication and management."
+        heading="Easy Adoption for Vendors at no extra cost"
+        text="Save up to 15+ hours per event by streamlining vendor coordination and management."
         btnText="See How it Works"
         my="120px"
       />
-      {/* </div> */}
       <Footer/>
     </div>
   )

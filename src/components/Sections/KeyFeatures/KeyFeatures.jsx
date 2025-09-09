@@ -25,7 +25,7 @@ const KeyFeatures = () => {
         {
             id: 3,
             icon: marketing,
-            title: "Marketing & Promotion",
+            title: "Task Management",
             bgColor: "#72C2E924",
             bullets: ["Shared vendor contacts and notes","Task assignments and deadlines","Permission-based access control"]
         },

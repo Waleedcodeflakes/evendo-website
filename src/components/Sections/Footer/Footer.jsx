@@ -8,7 +8,7 @@ import victory from '../../../assets/icons/victory.svg'
 import fb from '../../../assets/icons/fb.svg'
 import globe from '../../../assets/icons/globe.svg'
 import { useNavigate } from 'react-router-dom'
-import { Facebook, Linkedin, LinkedinIcon, Twitter } from 'lucide-react'
+// import { Facebook, Linkedin, LinkedinIcon, Twitter } from 'lucide-react'
 
 const Footer = () => {
 
@@ -18,8 +18,8 @@ const Footer = () => {
         <div className='w-[92%] m-auto'>
             <div className='flex-wrap md:flex justify-between'>
                 <div className='py-6'>
-                    <h3 className='lexend-bold text-[48px] text-[#3182ED]'>Evendo</h3>
-                    <p className='poppins-regular text-[16px] text-[#333] mt-2'>The Complete platform for event managers to <br/> streamline vendor relationships, communication, and e...</p>
+                    <h3 className='lexend-bold text-[48px] text-[#3182ED]'>VendComm</h3>
+                    <p className='poppins-regular text-[16px] text-[#333] mt-2'>The Complete platform for event managers to <br/> streamline vendor relationships and coordinations.</p>
                 <div className='py-6 flex-wrap md:flex gap-6'>
                     <p onClick={() => navigate('/')} className='poppins-semibold text-[16px] text-[#3182ED] cursor-pointer'>Overview</p>
                     <p onClick={() => navigate('/featured')} className='poppins-semibold text-[16px] text-[#3182ED] cursor-pointer'>Features</p>

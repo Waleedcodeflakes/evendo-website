@@ -18,7 +18,7 @@ const AllVendors = () => {
 
   return (
     <div className='w-[92%] m-auto flex flex-col items-center justify-center'>
-        <h2 className='poppins-semibold text-[32px] text-center text-[#333]'>Finally, All Your Vendors in One Beautiful Dashboard</h2>
+        <h2 className='poppins-semibold text-[32px] text-center text-[#333]'>Finally, All Your Vendors in One Platform</h2>
         <p className='poppins-medium text-lg text-[#333333CC] w-full sm:w-[50%] text-center'>Plan smarter, manage seamlessly, and deliver events with confidence. <br/> Our platform brings every tool you need into one place.</p>
         <section className='relative'>
         <div className='w-full block sm:flex items-center justify-between gap-[64px]'>
@@ -48,7 +48,7 @@ const AllVendors = () => {
                     <div className="absolute w-[293px] h-[281px] top-0 right-5 rounded-full bg-[#A465FD66] blur-[144px]"></div>
                     <p className='poppins-medium text-sm text-[#3182ED]'>Seamless Vendor Communication</p>
                     <h3 className='poppins-semibold text-[30px] text-[#333]'>One Inbox, Zero Chaos</h3>
-                    <p className='poppins-medium text-[20px] text-[#333333CC] w-[90%]'>Never lose another vendor message. Email, WhatsApp, calls, contracts - everything lives in one organized conversation thread per vendor</p>
+                    <p className='poppins-medium text-[20px] text-[#333333CC] w-[90%]'>Never lose another vendor message. Email, WhatsApp, calls, contracts - everything lives in one organized platform</p>
                 </MOTION.div>
             </AnimatePresence>
         </div>
@@ -58,7 +58,7 @@ const AllVendors = () => {
         <FeaturesRight
             img={invoices}
             smallText = "Smart Budget Management"
-            title= "Invoice Intelligence"
+            title= "Budget Intelligence"
             desc="Automatically track payments, due dates, and vendor costs. See your entire event budget in real-time without switching spreadsheets. "
         />
         {/* memory bank */}
@@ -71,9 +71,9 @@ const AllVendors = () => {
         {/* handoffs */}
         <FeaturesRight
             img={handoffs}
-            smallText = "Smart Budget Management"
+            smallText = "Smart Vendor Management"
             title= "Seamless Handoffs"
-            desc={`Share vendor relationships with your team instantly. No more "wait, who was our caterer last time?" moments.`}
+            desc={`Share vendor relationships with your team instantly. Save time on onboarding and training new team members with a swift handover.`}
         />
         </div>
     </div>
