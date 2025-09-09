@@ -4,9 +4,9 @@ import { useInView } from "react-intersection-observer";
 import zap from '../../../assets/icons/zap.svg'
 import layers from '../../../assets/icons/layers.svg'
 import tickBlue from '../../../assets/icons/Check icon.svg'
-// import tickGrey from '../../../assets/icons/icon-grey.svg'
+import tickGrey from '../../../assets/icons/check-circle-grey.svg'
 
-const Pricing = ({bgColor}) => {
+const Pricing = ({bgColor, my}) => {
 
     const [isActive, setIsActive] = useState(false)
     const plans = [
@@ -36,11 +36,12 @@ const Pricing = ({bgColor}) => {
             desc: 'Unlimited features.',
             plans: [
                     "Based on the number of vendors and team access usage.",
-                    "Basic reporting and analytics",
-                    "Up to 10 individual users",
-                    "20GB individual data each user",
-                    "Basic chat and email support",
+                    {grey: "Basic reporting and analytics"},
+                    {grey: "Up to 10 individual users"},
+                    {grey: "20GB individual data each user"},
+                    {grey: "Basic chat and email support"},
                 ],
+
         },
     ];
 
@@ -64,7 +65,7 @@ const Pricing = ({bgColor}) => {
         };
 
   return (
-    <section className='w-[92%] m-auto my-30' style={{backgroundColor: bgColor ? bgColor : 'transparent'}}>
+    <section className='w-[92%] m-auto' style={{backgroundColor: bgColor ? bgColor : 'transparent', marginTop: my ? my : 'my-30', marginBottom: my ? my : 'my-30'}}>
         <div className='text-center'>
             <p className='poppins-medium text-sm text-[#3182ED]'>Pricing</p>
             <h3 className='my-1 poppins-semibold text-[30px] md:text-[48px] text-[#333]'>Plans that fit your scale</h3>
@@ -97,8 +98,17 @@ const Pricing = ({bgColor}) => {
                     <div className='mt-8 text-left'>
                         {plan.plans.map((plan) => (
                             <div className='flex items-start gap-3 mt-4'>
-                            <img src={tickBlue} alt="icon tick" />
+                            {/* If plan has grey text, show grey tick, otherwise blue tick */}
+                            <img
+                                src={typeof plan === "object" && plan.grey ? tickGrey : tickBlue}
+                                alt="icon tick"
+                            />
+                            {/* check if plan is object and has grey key */}
+                            {typeof plan === 'object' && plan.grey ? 
+                            <p className='poppins-regular text-[14px] md:text-[16px] line-through text-[#47546780] w-[90%]'>{plan.grey}</p> :  
+
                             <p className='poppins-regular text-[14px] md:text-[16px] text-[#475467] w-[90%]'>{plan}</p>
+                            }
                             </div>
                         ))}
                     </div>

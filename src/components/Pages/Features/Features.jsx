@@ -114,8 +114,8 @@ const Features = () => {
       </div>
       {/* <div className='my-0'> */}
       <Adoption 
-        heading="Save 15+ Hour Per Event"
-        text="Event professionals using our Platform report significant time through automated workflow and streamlined  communication"
+        heading="No Extra Cost for Vendors! Easy Adoption"
+        text="Save up to 15+ hours per event by streamlining vendor communication and management."
         btnText="See How it Works"
         my="120px"
       />

@@ -10,15 +10,14 @@ const PricingPage = () => {
   return (
     <div>
       <Navbar/>
-      <div className='w-[92%] m-auto mt-[120px] mb-[80px] relative'>
-        <div className="absolute w-[290px] h-[285px] top-0 left-[-172px] rounded-full bg-[#A465FD66] blur-[214px]"></div>
-
+      <div className='w-[92%] m-auto mb-[80px] relative'>
+        <div className="absolute w-[290px] h-[225px] top-0 left-[-172px] rounded-full bg-[#A465FD66] blur-[134px]"></div>
         <h2 
           initial={{ y: 50, opacity: 0 }} 
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -50, opacity: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }} 
-        className='poppins-semibold text-[34px] md:text-[44px] lg:text-[54px] text-[#333333]'>Simple, transparent pricing
+        className='poppins-semibold text-[34px] md:text-[44px] mt-[120px] lg:text-[54px] text-[#333333]'>Simple, transparent pricing
         </h2>
         <p 
           initial={{ y: 100, opacity: 0 }} 
@@ -29,9 +28,15 @@ const PricingPage = () => {
         </p>
       </div>
       <div className='bg-[#F3F7FE] py-1'>
-        <Pricing />
+        <Pricing my="20px" />
       </div>
-      <FAQs/>
+      <div className='h-[100px] w-full relative bg-white'>
+        <div className="absolute w-[290px] h-[90px] top-0 left-0 bg-[#A465FD66] blur-[114px] z-[10]"></div>
+      </div>
+      <FAQs my="44px" className="relative z-50 bg-white" />
+      <div className='h-[100px] w-full relative bg-white'>
+        <div className="absolute w-[290px] h-[90px] top-0 right-0 bg-[#A465FD66] blur-[114px] z-[10]"></div>
+      </div>
       <Footer/>
     </div>
   )
