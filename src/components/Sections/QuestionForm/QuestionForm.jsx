@@ -25,22 +25,38 @@ const QuestionForm = () => {
         // transition={{ duration: 1, ease: "easeOut" }}
         // initial={{ x: -50, opacity: 0 }} 
         // exit={{ x: -50, opacity: 0 }}
-        className='w-full md:w-[40%]'>
+        className='w-full md:w-[50%]'>
             <form className="space-y-4">
+              <div className='flex items-center gap-4'>
+                <div className='w-[50%]'>
                 <label htmlFor="name" className="text-sm poppins-medium text-[#333333] pb-3">First Name</label>
                 <div className='mt-2 mb-6 border border-[#33333380] rounded-[20px] py-3 px-4 w-full'>
                     <input 
                     type="text" 
-                    placeholder="Enter first name" 
+                    placeholder="First name" 
                     className="w-full border-none outline-none text-[#000000B0] placeholder:text-[#000000B0] text-sm"
                     />
                 </div>
-                {/* last name */}
+                </div>
+                <div className='w-[50%]'>
+                  {/* last name */}
                 <label htmlFor="name" className="text-sm poppins-medium text-[#333333] pb-3">Last Name</label>
                 <div className='mt-2 mb-6 border border-[#33333380] rounded-[20px] py-3 px-4 w-full'>
                     <input 
                     type="text" 
-                    placeholder="Enter last name" 
+                    placeholder="Last name" 
+                    className="w-full border-none outline-none text-[#000000B0] placeholder:text-[#000000B0] text-sm"
+                    />
+                </div>
+                </div>
+              </div>
+                
+                {/* Email */}
+                <label htmlFor="name" className="text-sm poppins-medium text-[#333333] pb-3">Email</label>
+                <div className='mt-2 mb-6 border border-[#33333380] rounded-[20px] py-3 px-4 w-full'>
+                    <input 
+                    type="email" 
+                    placeholder="Email" 
                     className="w-full border-none outline-none text-[#000000B0] placeholder:text-[#000000B0] text-sm"
                     />
                 </div>
