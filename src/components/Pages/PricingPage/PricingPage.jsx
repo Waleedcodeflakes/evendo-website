@@ -10,7 +10,7 @@ const PricingPage = () => {
   return (
     <div>
       <Navbar/>
-      <div className='w-[92%] m-auto mb-[80px] relative'>
+      <div className='w-[92%] m-auto mb-[80px] relative mt-18 md:mt-40'>
         <div className="absolute w-[290px] h-[225px] top-0 left-[-172px] rounded-full bg-[#A465FD66] blur-[134px]"></div>
         <h2 
           initial={{ y: 50, opacity: 0 }} 
@@ -24,7 +24,7 @@ const PricingPage = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }} 
-        className='poppins-medium text-[20px] text-[#333333CC] mb-2 w-full sm:w-[80%]'>Choose the plan that's right for your business. Start with a free trial and upgrade as you grow.
+        className='poppins-medium text-lg md:text-[20px] text-[#333333CC] mb-2 w-full sm:w-[80%]'>Choose the plan that's right for your business. Start with a free trial and upgrade as you grow.
         </p>
       </div>
       <div className='bg-[#F3F7FE] py-1'>

@@ -8,6 +8,8 @@ import finance from '../../../assets/img/finance.svg'
 
 
 const Features = () => {
+    // const [showSignup, setShowSignup] = useState(false)
+  
 
   const featuresData = [
   {
@@ -71,7 +73,8 @@ const Features = () => {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
+      <div className='mt-18 md:mt-20'>
       <div className='bg-[#3182ED0F] text-center py-[120px]'>
         <div className='w-full sm:w-[78%] m-auto flex flex-col gap-6 px-3 sm:px-0'>
             <MOTION.h2
@@ -87,6 +90,7 @@ const Features = () => {
             transition={{ duration: 1, ease: "easeInOut" }}
             className='poppins-semibold text-[16px] md:text-[18px] lg:text-[20px] text-[#333333CC]'>The complete platform for event companies to manage vendors, streamline communication, and deliver flawless events. Built specifically for event professionals who demand excellence.</MOTION.p>
         </div>
+      </div>
       </div>
       {/* <KeyFeatures/> */}
       <div className='w-[92%] m-auto my-20'>

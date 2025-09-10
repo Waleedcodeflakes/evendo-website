@@ -19,11 +19,13 @@ const FaqsPage = () => {
   return (
     <div>
       <Navbar/>
+      <div className='mt-18 md:mt-50'>
       <div className='w-[92%] m-auto mt-[96px] mb-[136px] relative text-center'>
             <p className='text-[#3182ED] text-base poppins-medium'>FAQs</p>
         <h2 className='poppins-semibold text-[30px] md:text-[40px] lg:text-[48px] text-[#101828] pt-3 pb-6'>We’re here to help</h2>
         <p className='poppins-medium text-[20px] text-[#475467] mb-10'>Have questions? We’re here to help.</p>
         <button className='poppins-medium text-base text-white rounded-[8px] py-3 px-5 bg-[#3182ED]'>Get started</button>
+      </div>
       </div>
       <div className='bg-[#F9FAFB] w-full h-20'></div>
       <FAQs my="44px" />
