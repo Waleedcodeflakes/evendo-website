@@ -18,8 +18,8 @@ const FeaturesLeft = ({img, title, desc, smallText}) => {
               transition={{ duration: 1, ease: "easeOut" }}
               initial={{ x: -50, opacity: 0 }} 
               exit={{ x: -50, opacity: 0 }}
-              className='w-full sm:w-[50%] mb-[1rem] sm:mb-0'>
-                <img className='w-full' src={img} alt="image" />
+              className='w-full sm:w-[50%] mb-[1rem] sm:mb-0  flex justify-center'>
+                <img className='w-[80%]' src={img} alt="image" />
             </MOTION.div>
           </AnimatePresence>
             <MOTION.div 
@@ -30,7 +30,7 @@ const FeaturesLeft = ({img, title, desc, smallText}) => {
               transition={{ duration: 1, ease: "easeInOut" }}
             className='w-full sm:w-[50%] flex flex-col justify-center'>
             <div className='relative'>
-            <div className="absolute w-[293px] h-[281px] top-0 right-5 rounded-full bg-[#A465FD66] blur-[184px]"></div>
+            <div className="absolute w-[293px] h-[281px] top-0 right-5 rounded-full z-50 bg-[#A465FD66] blur-[184px]"></div>
             </div>
                 <p className='poppins-medium text-sm text-[#3182ED]'>{smallText}</p>
                 <h3 className='poppins-semibold text-[30px] text-[#333]'>{title}</h3>

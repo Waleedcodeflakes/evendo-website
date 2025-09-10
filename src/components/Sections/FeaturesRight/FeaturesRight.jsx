@@ -13,7 +13,7 @@ const FeaturesRight = ({img, title, desc, smallText}) => {
   return (
     <section className='relative'>
         <div className='w-full block sm:flex items-center justify-between gap-[64px] relative'>
-            <div className="absolute w-[293px] h-[281px] top-0 left-5 rounded-full bg-[#A465FD66] blur-[184px]"></div>
+            <div className="absolute w-[293px] h-[281px] top-0 left-5 z-50 rounded-full bg-[#A465FD66] blur-[184px]"></div>
             <AnimatePresence>
             <MOTION.div 
               ref={ref}
@@ -34,8 +34,8 @@ const FeaturesRight = ({img, title, desc, smallText}) => {
               animate={inView ? { x: 0, opacity: 1 } : {}}
               exit={{ y: -50, opacity: 0 }}
               transition={{ duration: 1, ease: "easeInOut" }}
-              className='w-full sm:w-[50%]'>
-                <img className='w-full' src={img} alt="image" />
+              className='w-full sm:w-[50%] flex justify-center'>
+                <img className='w-[80%]' src={img} alt="image" />
             </MOTION.div>
             </AnimatePresence>
         </div>
