@@ -21,12 +21,10 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
   const [noOfVendors, setNoOfVendors] = useState('')
   const [showSubmitPopup, setshowSubmitPopup] = useState(false)
 
-  const texts=["Payments or follow-ups" ,"All Invoices in one place", "Vendor Memory Bank","Consolidated Communication", "Seamless Cordination", "Task Management"];
+  const texts=["Payments or follow-ups" ,"All Invoices in one place", "Vendor Memory Bank","Consolidated Communication", "Seamless Coordination", "Task Management"];
 
 
   const api = 'https://aspbackend.hifahdevs.com/api/registerInterest/register-interest'
-
-  // handle form submission logic here
   // setshowSubmitPopup(true);
   // console.log({firstName, lastName, email, noOfVendors});
   // send data to backend
@@ -52,6 +50,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
       
     } finally {
       // Clear form fields after submission
+      setshowSubmitPopup(true);
         setFirstName('');
         setLastName('');
         setEmail('');

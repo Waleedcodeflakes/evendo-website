@@ -53,7 +53,7 @@ const AllVendors = () => {
             </AnimatePresence>
         </div>
         </section>
-        <div className='flex flex-col gap-[150px] my-[150px]'>
+        <div className='flex flex-col gap-20 my-20'>
         {/* invoices */}
         <FeaturesRight
             img={invoices}

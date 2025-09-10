@@ -59,7 +59,7 @@ const KeyFeatures = () => {
     };
 
   return (
-    <section className='my-30'>
+    <section className='my-20'>
         <div className='w-[92%] m-auto flex flex-col items-center justify-center mb-[44px]'>
             <h2 className='poppins-semibold text-center text-[32px] text-[#333]'>Key Features to Streamline Your Events</h2>
             <p className='poppins-medium text-lg text-[#333333CC] w-full sm:w-[48%] text-center'>Plan smarter, manage seamlessly, and deliver events with confidence. Our platform brings every tool you need into one place.</p>

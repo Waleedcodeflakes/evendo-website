@@ -50,7 +50,7 @@ const [openIndex, setOpenIndex] = useState(null);
     };
 
   return (
-    <section className='w-[92%] m-auto' style={{marginTop: my ? my : 'my-30', marginBottom: my ? my : 'my-30'}}>
+    <section className='w-[92%] m-auto' style={{marginTop: my ? my : 'my-20', marginBottom: my ? my : 'my-20'}}>
       <div className='text-center'>
         <h3 className='my-1 poppins-semibold text-[26px] md:text-[36px] text-[#101828]'>Frequently asked questions</h3>
         <p className='poppins-regular text-[18px] md:text-xl text-[#475467]'>Everything you need to know about the product and billing.</p>

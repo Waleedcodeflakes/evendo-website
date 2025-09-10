@@ -5,10 +5,12 @@ import zap from '../../../assets/icons/zap.svg'
 import layers from '../../../assets/icons/layers.svg'
 import tickBlue from '../../../assets/icons/Check icon.svg'
 import tickGrey from '../../../assets/icons/check-circle-grey.svg'
+import { useNavigate } from 'react-router-dom';
 
 const Pricing = ({bgColor, my, onScroll, setPackageName}) => {
 
     const [isActive, setIsActive] = useState(false)
+    const navigate = useNavigate();
     // const [packageName, setPackageName] = useState('')
     
     const plans = [
@@ -67,7 +69,7 @@ const Pricing = ({bgColor, my, onScroll, setPackageName}) => {
         };
 
   return (
-    <section className='w-[92%] m-auto' style={{backgroundColor: bgColor ? bgColor : 'transparent', marginTop: my ? my : 'my-30', marginBottom: my ? my : 'my-30'}}>
+    <section className='w-[92%] m-auto' style={{backgroundColor: bgColor ? bgColor : 'transparent', marginTop: my ? my : 'my-20', marginBottom: my ? my : 'my-20'}}>
         <div className='text-center'>
             <p className='poppins-medium text-sm text-[#3182ED]'>Pricing</p>
             <h3 className='my-1 poppins-semibold text-[30px] md:text-[48px] text-[#333]'>Plans that fit your scale</h3>
@@ -115,7 +117,7 @@ const Pricing = ({bgColor, my, onScroll, setPackageName}) => {
                         ))}
                     </div>
                     <div>
-                        <button onClick={() => {onScroll; setPackageName(plan.title)}} className='text-white poppins-semibold text-[14px] md:text-[16px] py-3 w-full rounded-[8px] mt-10 bg-[#3182ED]'>Get started</button>
+                        <button onClick={() => {onScroll(); navigate(''); setPackageName(plan.title)}} className='text-white poppins-semibold cursor-pointer text-[14px] md:text-[16px] py-3 w-full rounded-[8px] mt-10 bg-[#3182ED]'>Get started</button>
                     </div>
                 </MOTION.div>
                 </AnimatePresence>

@@ -12,7 +12,7 @@ const Demo = () => {
     });
 
   return (
-    <section className='w-[92%] m-auto my-30'>
+    <section className='w-[92%] m-auto my-20'>
         <div className='w-full text-center'>
             <h2 className='poppins-semibold text-[32px] text-[#333]'>Watch Demo</h2>
             <p className='poppins-medium text-[18px] text-[#333333CC]'>See how effortless event management can be.</p>

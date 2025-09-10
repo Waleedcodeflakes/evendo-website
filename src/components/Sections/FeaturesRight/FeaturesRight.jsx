@@ -21,7 +21,7 @@ const FeaturesRight = ({img, title, desc, smallText}) => {
               transition={{ duration: 1, ease: "easeOut" }}
               initial={{ x: -50, opacity: 0 }} 
               exit={{ x: -50, opacity: 0 }}
-            className='w-full sm:w-[50%] flex flex-col justify-center relative mb-[2rem] sm:mb-0'>
+            className='w-full sm:w-[50%] flex flex-col justify-center relative mb-[1rem] sm:mb-0'>
                 <p className='poppins-medium text-sm text-[#3182ED]'>{smallText}</p>
                 <h3 className='poppins-semibold text-[30px] text-[#333]'>{title}</h3>
                 <p className='poppins-medium text-[20px] text-[#333333CC]'>{desc}</p>

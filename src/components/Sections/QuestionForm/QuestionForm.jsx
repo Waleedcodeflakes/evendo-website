@@ -44,7 +44,7 @@ const QuestionForm = ({packageName}) => {
         }
 
   return (
-    <section className='w-[92%] m-auto my-25'>
+    <section className='w-[92%] m-auto my-20'>
       <div className='text-center'>
         <h3 className='my-1 poppins-semibold text-[26px] md:text-[36px] text-[#101828]'>Got a Question? We’re Here to Help!</h3>
         <p className='poppins-regular text-[18px] md:text-xl text-[#333333]'>Our team is here to answer your questions and guide you through getting started.</p>

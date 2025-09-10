@@ -18,7 +18,7 @@ const FeaturesLeft = ({img, title, desc, smallText}) => {
               transition={{ duration: 1, ease: "easeOut" }}
               initial={{ x: -50, opacity: 0 }} 
               exit={{ x: -50, opacity: 0 }}
-              className='w-full sm:w-[50%] mb-[2rem] sm:mb-0'>
+              className='w-full sm:w-[50%] mb-[1rem] sm:mb-0'>
                 <img className='w-full' src={img} alt="image" />
             </MOTION.div>
           </AnimatePresence>
