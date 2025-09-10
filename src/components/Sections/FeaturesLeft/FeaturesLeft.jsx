@@ -34,7 +34,7 @@ const FeaturesLeft = ({img, title, desc, smallText}) => {
             </div>
                 <p className='poppins-medium text-sm text-[#3182ED]'>{smallText}</p>
                 <h3 className='poppins-semibold text-[30px] text-[#333]'>{title}</h3>
-                <p className='poppins-medium text-[20px] text-[#333333CC] w-[90%]'>{desc}</p>
+                <p className='poppins-medium text-[18px] text-[#333333CC] w-[90%]'>{desc}</p>
             </MOTION.div>
         </div>
     </section>

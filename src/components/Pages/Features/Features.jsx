@@ -14,31 +14,38 @@ const Features = () => {
     id: 1,  
     title: "Event Scheduling",
     description: "Effortlessly plan and schedule events with our intuitive calendar interface",
+    bgColor: "#3B44B714",
   },
   {
     id: 2,  
     title: "Attendee Management",
     description: "Manage attendee information, track participation, and personalize experiences.",
+    bgColor: "#72C2E924",
   },
   {
     id: 3,  
     title: "Analytics & Reporting",
     description: "Gain insights into event performance with detailed analytics and customizable reports.",
+    bgColor: "#FFEFF5",
   },
   {
     id: 4,  
     title: "Ticking & Registration",
     description: "Streamline ticketing and registration processes with secure and user-friendly tools.",
+    bgColor: "#3B44B714",
   },
   {
     id: 5,  
     title: "Real-Time Commination",
     description: "Facilitate real-time communication between attendees, speakers, and organizers.",
+    bgColor: "#72C2E924",
   },
   {
     id: 6,  
     title: "Workflow AutoNation",
     description: "Automate repetitive tasks and workflows to save time and improve efficiency.",
+            bgColor: "#FFEFF5",
+
   },
 ]
 
@@ -83,7 +90,7 @@ const Features = () => {
       </div>
       {/* <KeyFeatures/> */}
       <div className='w-[92%] m-auto my-20'>
-        <h3 className='poppins-semibold text-[24px] md:text-[26px] lg:text-[32px] text-[#333333]'>Key Feature</h3>
+        <h3 className='poppins-semibold text-[24px] md:text-[26px] lg:text-[32px] text-[#333333]'>Key Features</h3>
         <AnimatePresence>
         <MOTION.div
         ref={ref}
@@ -97,10 +104,10 @@ const Features = () => {
               ref={ref}
               variants={item}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className='bg-[#FFFFFF] shadow-[0px_4px_14px_0px_#00000014] rounded-[16px] py-8 px-5'>
+              className='rounded-[16px] py-8 px-5' style={{backgroundColor: feature.bgColor}}>
                   <img src={finance} alt="icon" />
-                  <h4 className='poppins-medium text-[24px] text-[#333333E5] mt-6 mb-3'>{feature.title}</h4>
-                  <p className='poppins-medium text-[18px] text-[#333333B2] mb-2'>{feature.description}</p>
+                  <h4 className='poppins-medium text-[20px] text-[#333333E5] mt-6 mb-3'>{feature.title}</h4>
+                  <p className='poppins-medium text-[16px] text-[#333333B2] mb-2'>{feature.description}</p>
               </MOTION.div>
               </AnimatePresence>
             ))}

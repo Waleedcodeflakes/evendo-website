@@ -21,7 +21,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
   const [noOfVendors, setNoOfVendors] = useState('')
   const [showSubmitPopup, setshowSubmitPopup] = useState(false)
 
-  const texts=["Payments or follow-ups" ,"All Invoices in one place", "Vendor Memory Bank","Consolidated Communication", "Seamless Coordination", "Task Management"];
+  const texts=["Missing Payments or follow-ups","Consolidated Communication", "Seamless Coordination", "Task Management"];
 
 
   const api = 'https://aspbackend.hifahdevs.com/api/registerInterest/register-interest'
@@ -62,7 +62,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
     <section className='w-full'>
       {/* <AnimatePresence> */}
       <div 
-        className="relative w-full h-screen bg-cover bg-center" 
+        className="relative w-full h-full bg-cover bg-center py-5 sm:py-14" 
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         {/* Overlay (optional for dark effect) */}
@@ -80,7 +80,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
             exit={{ x: -30, opacity: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
           >
-            <p className='poppins-medium text-xs sm:text-sm text-[#3182ED] bg-[#3182ED47] px-3 py-[6px] rounded-[60px] w-fit mt-10 lg:mt-0'>Coming Soon - Early Access Available</p>
+            <p className='poppins-medium text-xs sm:text-sm text-[#3182ED] bg-[#3182ED47] px-3 py-[6px] rounded-[60px] w-fit mt-5 lg:mt-0'>Coming Soon - Early Access Available</p>
             <h1 className="text-[30px] md:text-[36px] lg:text-[44px] poppins-semibold mt-1" style={{lineHeight: '1.4'}}>
               Manage Your Event Vendors With Ease
             </h1>

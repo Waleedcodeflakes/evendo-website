@@ -48,7 +48,7 @@ const AllVendors = () => {
                     <div className="absolute w-[293px] h-[281px] top-0 right-5 rounded-full bg-[#A465FD66] blur-[144px]"></div>
                     <p className='poppins-medium text-sm text-[#3182ED]'>Seamless Vendor Communication</p>
                     <h3 className='poppins-semibold text-[30px] text-[#333]'>One Inbox, Zero Chaos</h3>
-                    <p className='poppins-medium text-[20px] text-[#333333CC] w-[90%]'>Never lose another vendor message. Email, WhatsApp, calls, contracts - everything lives in one organized platform</p>
+                    <p className='poppins-medium text-[18px] text-[#333333CC] w-[90%]'>Never lose another vendor message. Email, WhatsApp, calls, contracts - everything lives in one organized platform.</p>
                 </MOTION.div>
             </AnimatePresence>
         </div>
@@ -66,7 +66,7 @@ const AllVendors = () => {
             img={memoryBank}
             smallText = "Smart Vendor Management"
             title= "Vendor Memory Bank"
-            desc="Every quote, conversation, and performance note saved forever. Plan your next event in minutes, not weeks, using your complete vendor history"
+            desc="Every quote, conversation, and performance note saved forever. Plan your next event in minutes, not weeks, using your complete vendor history."
         />
         {/* handoffs */}
         <FeaturesRight

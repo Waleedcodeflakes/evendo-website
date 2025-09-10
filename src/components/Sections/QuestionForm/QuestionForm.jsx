@@ -104,9 +104,9 @@ const QuestionForm = ({packageName}) => {
                 <button 
                 onClick={(e) => handleSubmit(e)}
                 type="submit" 
-                className="w-fit bg-[#3182ED] text-white py-2  px-10 rounded-[48px] poppins-medium text-lg transition mt-2"
+                className="w-fit bg-[#3182ED] cursor-pointer text-white py-2  px-10 rounded-[48px] poppins-medium text-lg transition-all duration-300 ease-in-out mt-2 hover:shadow-2xl"
                 >
-                Submit
+                Free Early Sign up
                 </button>
             </form>
         </div>

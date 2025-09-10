@@ -30,11 +30,6 @@ const Challenges = ({setShowSignup}) => {
             type: 'danger'
         },
         {
-            id: 4,
-            text: "Multiple follow-ups to get full visibility of the budget.",
-            type: 'success'
-        },
-        {
             id: 5,
             text: "Emails and spreadsheets to manage stakeholders and keep them informed of event progress.",
             type: 'success'
@@ -57,13 +52,8 @@ const Challenges = ({setShowSignup}) => {
             type: 'danger'
         },
         {
-            id: 4,
-            text: "Budget tracker with visibility to all relevant stakeholders to keep everyone on the same page.",
-            type: 'success'
-        },
-        {
             id: 5,
-            text: "Visibility of event progress via dashboard. Better transparency.",
+            text: "Visibility of event progress and budget via dashboard. Better transparency.",
             type: 'success'
         },
     ]
@@ -96,7 +86,6 @@ const Challenges = ({setShowSignup}) => {
                     { id: 2, src: curve },
                     { id: 3, src: curve },
                     { id: 4, src: curve },
-                    { id: 5, src: curve },
                 ].map((item, index) => (
                     <AnimatedCard key={item.id} delay={index * 0.2}>
                     <img className="h-[97px] w-[218px]" src={item.src} alt="curve line" />
