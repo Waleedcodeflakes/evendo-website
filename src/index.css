@@ -5,7 +5,9 @@
 
 @import "tailwindcss";
 
-
+html, body {
+  overflow-x: hidden;
+}
 
 .lexend-bold {
   font-family: "Lexend", sans-serif;

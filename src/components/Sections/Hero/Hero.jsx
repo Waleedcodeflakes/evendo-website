@@ -21,7 +21,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
   const [noOfVendors, setNoOfVendors] = useState('')
   const [showSubmitPopup, setshowSubmitPopup] = useState(false)
 
-  const texts=["Missing Payments or follow-ups","Consolidated Communication", "Seamless Coordination", "Task Management"];
+  const texts=["All invoices in one place", "Vendor Memory Bank","Consolidated Communication", "Seamless Coordination", "Task Management"];
 
 
   const api = 'https://aspbackend.hifahdevs.com/api/registerInterest/register-interest'
@@ -88,11 +88,11 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
               Manage Your Event Vendors With Ease
             </h1>
             <p className="text-sm md:text-[15px] lg:text-[17px] poppins-medium text-[#FFFFFFCC]">
-              A complete platform that puts all your vendor communication, invoices, and coordination in one place. No more digging into emails, missing payments, or missing a follow-up.
+              A complete platform that puts all your vendor communication, invoices, and coordination in one place. No more digging into emails, missing payments or follow-ups.
             </p>
             <div className='my-8'>
               {texts.map((text, index) => (
-                <div key={index} className="flex items-center space-x-3 mb-5">
+                <div key={index} className="flex items-center space-x-3 mb-4">
                   <div className="w-4 h-4 rounded-full"><img src={tickEmp} alt="icon" /></div>
                   <p className="text-sm md:text-sm lg:text-[15px] poppins-medium text-[#FFFFFFCC]">{text}</p>
                 </div>

@@ -52,7 +52,7 @@ const QuestionForm = ({packageName}) => {
         <h3 className='my-1 poppins-semibold text-[26px] md:text-[36px] text-[#101828]'>Got a Question? We’re Here to Help!</h3>
         <p className='poppins-regular text-[18px] md:text-xl text-[#333333]'>Our team is here to answer your questions and guide you through getting started.</p>
       </div>
-      <div className='flex w-[70%] m-auto justify-between mt-10'>
+      <div className='flex w-full sm:w-[70%] m-auto justify-between mt-10'>
         {/* form animation */}
         <div
         // ref={ref}
@@ -62,8 +62,8 @@ const QuestionForm = ({packageName}) => {
         // exit={{ x: -50, opacity: 0 }}
         className='w-full md:w-[50%]'>
             <form className="space-y-4">
-              <div className='flex items-center gap-4'>
-                <div className='w-[50%]'>
+              <div className='block sm:flex items-center gap-4'>
+                <div className='w-full sm:w-[50%]'>
                 <label htmlFor="name" className="text-sm poppins-medium text-[#333333] pb-3">First Name</label>
                 <div className='mt-2 mb-6 border border-[#33333380] rounded-[20px] py-3 px-4 w-full'>
                     <input 
@@ -74,7 +74,7 @@ const QuestionForm = ({packageName}) => {
                     />
                 </div>
                 </div>
-                <div className='w-[50%]'>
+                <div className='w-full sm:w-[50%]'>
                   {/* last name */}
                 <label htmlFor="name" className="text-sm poppins-medium text-[#333333] pb-3">Last Name</label>
                 <div className='mt-2 mb-6 border border-[#33333380] rounded-[20px] py-3 px-4 w-full'>
