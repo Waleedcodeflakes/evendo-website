@@ -1,14 +1,15 @@
 import React, {useState} from 'react'
 import { Menu, X } from 'lucide-react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [navLinks, setNavLinks] = useState(false);
   return (
     <section className='w-full bg-[#fff] shadow-[0px_0px_24px_0px_#0000001F]'>
         <div className='w-[92%] m-auto gap-10 flex justify-between items-center py-2 md:py-3'>
             <div className='cursor-pointer'>
-                <h1 className='lexend-bold text-[#3182ED] text-[40px]'>VendComm</h1>
+                <h1 onClick={() => navigate('/')} className='lexend-bold text-[#3182ED] text-[40px]'>VendComm</h1>
             </div>
             <nav className='md:block'>
                 <ul className='hidden md:flex gap-12'>

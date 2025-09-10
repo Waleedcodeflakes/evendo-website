@@ -30,8 +30,11 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
   // send data to backend
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      
+    if(!firstName || !lastName || !email || !noOfVendors) {
+      alert("please fill out the fields!")
+      return
+    }
+    try { 
      const res  = await axios.post(api, {
         firstName: firstName,
         lastName: lastName,
@@ -144,7 +147,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                   {/* email */}
                   <label htmlFor="name" className="text-base poppins-medium text-white pt-3">Email</label>
                   <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-5 mb-6'>
-                      <div className='flex items-center gap-2'>
+                      <div className='flex items-center gap-2 w-full'>
                         <img src={emailIcon} alt="icon" />
                       <input 
                       value={email} onChange={(e) => setEmail(e.target.value)}
@@ -157,7 +160,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                   {/* vendors */}
                   <label htmlFor="name" className="text-base poppins-medium text-white pt-3">Average number of vendors for an event</label>
                   <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-5'>
-                      <div className='flex items-center gap-2'>
+                      <div className='flex items-center gap-2 w-full'>
                         <img src={hashtag} alt="icon" />
                       <input 
                       value={noOfVendors} onChange={(e) => setNoOfVendors(e.target.value)}
@@ -193,7 +196,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                 {/* fname and lname inputs */}
                 <div className='mt-2 mb-6'>
                   <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full'>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-2 w-full pr-2'>
                       <img src={user} alt="icon" />
                     <input 
                       value={firstName} onChange={(e) => setFirstName(e.target.value)}
@@ -205,7 +208,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                       <img src={cross} alt="icon" />
                   </div>
                   <div className='flex justify-between items-center mt-4 border border-[#E9E9E9] rounded-lg p-3 w-full'>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-2 w-full pr-2'>
                       <img src={user} alt="icon" />
                     <input 
                       value={lastName} onChange={(e) => setLastName(e.target.value)}
@@ -221,7 +224,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                 {/* email */}
                 <label htmlFor="name" className="text-base poppins-medium text-[#fff] pt-3">Email</label>
                 <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-5 mb-6'>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-2 w-full'>
                       <img src={emailIcon} alt="icon" />
                     <input 
                       value={email} onChange={(e) => setEmail(e.target.value)}
@@ -234,7 +237,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                 {/* vendors */}
                 <label htmlFor="name" className="text-base poppins-medium text-[#fff] pt-3">Average number of vendors for an event</label>
                 <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-5'>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-2 w-full'>
                       <img src={hashtag} alt="icon" />
                     <input 
                       value={noOfVendors} onChange={(e) => setNoOfVendors(e.target.value)}

@@ -16,8 +16,11 @@ const QuestionForm = ({packageName}) => {
   // console.log({firstName, lastName, email, packageName});
       const handleSubmit = async (e) => {
           e.preventDefault();
+          if(!firstName || !lastName || !email || !message) {
+            alert("please fill out the fields!")
+            return
+          }
           try {
-            
            const res  = await axios.post(api, {
               firstName: firstName,
               lastName: lastName,
@@ -30,10 +33,10 @@ const QuestionForm = ({packageName}) => {
               }
             });
             alert("Query submitted! wait for response!")
-            // console.log("Response : ",res.data);
+            console.log("Response : ",res.data);
       
           } catch (error) {
-            console.log( "Error : ",error);
+            console.log( "Error : ",error.message);
           } finally {
       // Clear form fields after submission
         setFirstName('');

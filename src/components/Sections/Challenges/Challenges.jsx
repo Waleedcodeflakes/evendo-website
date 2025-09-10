@@ -80,8 +80,8 @@ const Challenges = ({setShowSignup}) => {
             </div>
             {/* vertical line with curve */}
             {/* <AnimatedCard delay={0.3}> */}
-            <div className="w-[17%] hidden sm:flex flex-col justify-between mt-22" style={{ height: '-webkit-fill-available' }}>
-  {[
+            <div className="w-[17%] hidden sm:flex flex-col items-center justify-between mt-22" style={{ height: '-webkit-fill-available' }}>
+                {[
                     { id: 1, src: curve },
                     { id: 2, src: curve },
                     { id: 3, src: curve },
