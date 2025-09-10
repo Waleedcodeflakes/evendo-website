@@ -21,7 +21,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
   const [noOfVendors, setNoOfVendors] = useState('')
   const [showSubmitPopup, setshowSubmitPopup] = useState(false)
 
-  const texts=["All invoices in one place", "Vendor Memory Bank","Consolidated Communication", "Seamless Coordination", "Task Management"];
+  const texts=["Consolidated Communication", "Seamless Coordination", "Task Management"];
 
 
   const api = 'https://aspbackend.hifahdevs.com/api/registerInterest/register-interest'
@@ -62,7 +62,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
   }
 
   return (
-    <section className='w-full'>
+    <section className='w-full mt-18 md:mt-20'>
       {/* <AnimatePresence> */}
       <div 
         className="relative w-full h-full bg-cover bg-center py-5 sm:py-14" 
@@ -112,12 +112,12 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ y: -30, opacity: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className={`relative hidden md:block max-w-[40%] bg-white/40 backdrop-blur-[50px] rounded-[20px] px-8 py-12`}>
+            className={`relative hidden md:block max-w-[40%] bg-white/40 backdrop-blur-[50px] rounded-[20px] px-8 py-9`}>
               <h2 className="text-2xl poppins-semibold text-white mb-6">Want early access? Join waitlist!</h2>
                 <form className="space-y-4">
                   <label htmlFor="name" className="text-base poppins-medium text-white pb-3">Name</label>
                   {/* fname and lname inputs */}
-                  <div className='flex items-center gap-4 mt-2 mb-6'>
+                  <div className='flex items-center gap-4 mt-1 mb-6'>
                     <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full'>
                       <div className='flex items-center gap-2'>
                         <img src={user} alt="icon" />
@@ -146,7 +146,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                   </div>
                   {/* email */}
                   <label htmlFor="name" className="text-base poppins-medium text-white pt-3">Email</label>
-                  <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-5 mb-6'>
+                  <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-1 mb-6'>
                       <div className='flex items-center gap-2 w-full'>
                         <img src={emailIcon} alt="icon" />
                       <input 
@@ -159,7 +159,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                   </div>
                   {/* vendors */}
                   <label htmlFor="name" className="text-base poppins-medium text-white pt-3">Average number of vendors for an event</label>
-                  <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-5'>
+                  <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-1'>
                       <div className='flex items-center gap-2 w-full'>
                         <img src={hashtag} alt="icon" />
                       <input 
@@ -174,7 +174,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                     type="submit" 
                     value="Sign up for waitlist"
                     onClick={(e) => handleSubmit(e)}
-                    className="w-full bg-[#3182ED] cursor-pointer text-white py-2 rounded-[50px] poppins-medium text-lg transition mt-10"
+                    className="w-full bg-[#3182ED] cursor-pointer text-white py-2 rounded-[50px] poppins-medium text-lg transition mt-5"
                   />
                 </form>
             </MOTION.div>
@@ -223,7 +223,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                 </div>
                 {/* email */}
                 <label htmlFor="name" className="text-base poppins-medium text-[#fff] pt-3">Email</label>
-                <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-5 mb-6'>
+                <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-2 mb-6'>
                     <div className='flex items-center gap-2 w-full'>
                       <img src={emailIcon} alt="icon" />
                     <input 
@@ -236,7 +236,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                 </div>
                 {/* vendors */}
                 <label htmlFor="name" className="text-base poppins-medium text-[#fff] pt-3">Average number of vendors for an event</label>
-                <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-5'>
+                <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full mt-2'>
                     <div className='flex items-center gap-2 w-full'>
                       <img src={hashtag} alt="icon" />
                     <input 

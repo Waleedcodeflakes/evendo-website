@@ -21,7 +21,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar setShowSignup={setShowSignup} />
       <Hero onScroll={() => targetRef.current.scrollIntoView({ behavior: "smooth" })} showSignup={showSignup} setShowSignup={setShowSignup} />
       <Challenges setShowSignup={setShowSignup} />
       <AllVendors/>

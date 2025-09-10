@@ -2,11 +2,11 @@ import React, {useState} from 'react'
 import { Menu, X } from 'lucide-react'
 import { NavLink, useNavigate } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({setShowSignup}) => {
     const navigate = useNavigate();
     const [navLinks, setNavLinks] = useState(false);
   return (
-    <section className='w-full bg-[#fff] shadow-[0px_0px_24px_0px_#0000001F]'>
+    <section className='w-full fixed top-0 bg-[#fff] shadow-[0px_0px_24px_0px_#0000001F] z-20'>
         <div className='w-[92%] m-auto gap-10 flex justify-between items-center py-2 md:py-3'>
             <div className='cursor-pointer'>
                 <h1 onClick={() => navigate('/')} className='lexend-bold text-[#3182ED] text-[40px]'>VendComm</h1>
@@ -20,8 +20,8 @@ const Navbar = () => {
                 </ul>
             </nav>
             <div className='hidden md:flex items-center ml-4'>
-                <li className='inline-block text-[#3182ED] poppins-medium text-sm lg:text-[17px] mx-2 cursor-pointer bg-[#3182ED14] py-[10px] px-9 rounded-[8px]'> <a  href="#">Sign In</a></li>
-                <li className='inline-block text-[#fff] poppins-medium text-sm lg:text[17px] mx-4 cursor-pointer bg-[#3182ED] py-[10px] px-5 rounded-[8px]'> <a  href="#">Get Started </a></li>
+                {/* <li className='inline-block text-[#3182ED] poppins-medium text-sm lg:text-[17px] mx-2 cursor-pointer bg-[#3182ED14] py-[10px] px-9 rounded-[8px]'> <a  href="#">Sign In</a></li> */}
+                <li className='inline-block text-[#fff] poppins-medium text-sm lg:text[17px] mx-4 cursor-pointer bg-[#3182ED] py-[10px] px-5 rounded-[8px]'> <p onClick={() => setShowSignup(true)}>Get Started </p></li>
             </div>
             <div className='block md:hidden'>
                 <Menu onClick={() => setNavLinks(true)} className='w-6 h-6' />
@@ -39,8 +39,8 @@ const Navbar = () => {
                                 <li onClick={() => setNavLinks(false)} className='inline-block poppins-medium text-sm lg:text-xl  py-0 cursor-pointer'> <NavLink  to="/pricing" className={({ isActive }) =>`${isActive ? 'text-[#3182ED]' : 'text-[#33333399]'}`}>Pricing</NavLink></li>
                                 <li onClick={() => setNavLinks(false)} className='inline-block poppins-medium text-sm lg:text-xl  py-0 cursor-pointer'> <NavLink  to="/faqs" className={({ isActive }) =>
                                 `${isActive ? 'text-[#3182ED]' : 'text-[#33333399]'}`}>FAQ</NavLink></li>
-                                <li onClick={() => setNavLinks(false)} className='inline-block text-center text-[#3182ED] poppins-medium text-sm lg:text-xl mx-2 cursor-pointer bg-[#3182ED14] py-[10px] px-9 rounded-[8px]'> <a  href="#">Sign In</a></li>
-                                <li onClick={() => setNavLinks(false)} className='inline-block text-center text-[#fff] poppins-medium text-sm lg:text-xl mx-4 cursor-pointer bg-[#3182ED] py-[10px] px-5 rounded-[8px]'> <a  href="#">Get Started </a></li> 
+                                {/* <li onClick={() => setNavLinks(false)} className='inline-block text-center text-[#3182ED] poppins-medium text-sm lg:text-xl mx-2 cursor-pointer bg-[#3182ED14] py-[10px] px-9 rounded-[8px]'> <a  href="#">Sign In</a></li> */}
+                                <li onClick={() => setNavLinks(false)} className='inline-block text-center text-[#fff] poppins-medium text-sm lg:text-xl mx-4 cursor-pointer bg-[#3182ED] py-[10px] px-5 rounded-[8px]'> <a onClick={() => {setShowSignup(true)}} href="#">Get Started </a></li> 
                             </ul>
                         </nav>
                     </div>
