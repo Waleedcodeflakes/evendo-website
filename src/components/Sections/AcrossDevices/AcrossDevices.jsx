@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion as MOTION, AnimatePresence } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
-import evendoResponsive from '../../../assets/img/evendoResponsive.svg'
+import evendoResponsive from '../../../assets/img/Content.svg'
 
 
 const AcrossDevices = ({setShowSignup}) => {

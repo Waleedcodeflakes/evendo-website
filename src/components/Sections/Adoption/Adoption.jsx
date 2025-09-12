@@ -2,10 +2,12 @@ import React from 'react'
 import { motion as MOTION, AnimatePresence } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import clock from '../../../assets/icons/clock.svg'
+import { useNavigate } from 'react-router-dom';
 
 
 const Adoption = ({heading, text, btnText, radius, my}) => {
 
+  const navigate = useNavigate();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -27,7 +29,7 @@ const Adoption = ({heading, text, btnText, radius, my}) => {
         <div className='flex justify-center'>
           <p className='poppins-medium text-[18px] text-[#FFFFFFCC] text-center w-full sm:w-[60%]'>{text}</p>
         </div>
-        <button className='text-[#3182ED] poppins-medium text-[16px] cursor-pointer bg-[#FFFFFF] py-3 px-5 mt-[44px] rounded-[8px]'>{btnText}</button>
+        <button onClick={() => navigate('/features')} className='text-[#3182ED] poppins-medium text-[16px] cursor-pointer bg-[#FFFFFF] py-3 px-5 mt-[44px] rounded-[8px]'>{btnText}</button>
     </MOTION.section>
     </AnimatePresence>
   )

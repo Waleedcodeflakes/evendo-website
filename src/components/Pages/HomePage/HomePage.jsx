@@ -16,7 +16,7 @@ import Footer from '../../Sections/Footer/Footer';
 const HomePage = () => {
   const targetRef = useRef(null);
   const questionRef = useRef(null);
-  const [showSignup, setShowSignup] = useState(false)
+  const [showSignup, setShowSignup] = useState(false);
   const [packageName, setPackageName] = useState('')
 
   return (
@@ -35,7 +35,7 @@ const HomePage = () => {
       <div ref={targetRef}>
         <Demo/>
       </div>
-      <Pricing setPackageName={setPackageName} onScroll={() => questionRef.current.scrollIntoView({ behavior: "smooth" })} />
+      <Pricing setPackageName={setPackageName} onScroll={() => questionRef.current.scrollIntoView({ behavior: "smooth" })}  />
       <FAQs />
       <div  ref={questionRef}>
       <QuestionForm packageName={packageName} />

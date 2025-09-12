@@ -95,7 +95,7 @@ const Challenges = ({setShowSignup}) => {
             {/* </AnimatedCard> */}
             {/* solutions */}
             <div className='w-full sm:w-[43%] mt-10 sm:mt-0'>
-                <h2 className='poppins-semibold text-center sm:text-left text-[28px] text-[#333]'>How VendComm Transforms Them</h2>
+                <h2 className='poppins-semibold text-center sm:text-left text-[28px] text-[#333]'>How VendComm Fixes Them</h2>
                 {solutions.map((challenge) => (
                     <AnimatedCard key={challenge.id} delay={challenge.id * 0.2}>
                     <div 

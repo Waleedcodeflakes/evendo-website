@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { motion as MOTION, AnimatePresence } from 'framer-motion';
-import heroBg from '../../../assets/icons/heroBg.svg'
+import heroBg from '../../../assets/img/heroBg.webp'
 import user from '../../../assets/icons/user.svg'
 import emailIcon from '../../../assets/icons/email.svg'
 import hashtag from '../../../assets/icons/hashtag.svg'
@@ -70,10 +70,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
       >
         {/* Overlay (optional for dark effect) */}
         <div className="absolute w-[460px] h-[385px] top-0 left-[-172px] rounded-full bg-[#3182ED66] blur-[414px]"></div>
-
-        <div className="absolute w-[777px] h-[700px] top-0 right-0 rounded-full bg-[#3182ED0A] blur-[200px]"></div>
-
-        
+        <div className="absolute w-[777px] h-[700px] top-0 right-0 rounded-full bg-[#3182ED0A] blur-[200px]"></div> 
         <div className="relative w-[92%] m-auto h-full flex flex-col lg:flex-row items-center justify-between">
           {/* Left Side Content */}
           <AnimatePresence>
@@ -194,7 +191,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
               <form className="space-y-4">
                 <label htmlFor="name" className="text-base poppins-medium text-[#fff] pb-3">Name</label>
                 {/* fname and lname inputs */}
-                <div className='mt-2 mb-6'>
+                <div className='mt-2 mb-6 block sm:flex items-center gap-3'>
                   <div className='flex justify-between items-center border border-[#E9E9E9] rounded-lg p-3 w-full'>
                     <div className='flex items-center gap-2 w-full pr-2'>
                       <img src={user} alt="icon" />
@@ -207,7 +204,7 @@ const Hero = ({onScroll, showSignup, setShowSignup}) => {
                     </div>
                       <img src={cross} alt="icon" />
                   </div>
-                  <div className='flex justify-between items-center mt-4 border border-[#E9E9E9] rounded-lg p-3 w-full'>
+                  <div className='flex justify-between items-center mt-4 sm:mt-0 border border-[#E9E9E9] rounded-lg p-3 w-full'>
                     <div className='flex items-center gap-2 w-full pr-2'>
                       <img src={user} alt="icon" />
                     <input 

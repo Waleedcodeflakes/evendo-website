@@ -8,6 +8,9 @@
 html, body {
   overflow-x: hidden;
 }
+textarea {
+  resize: none;
+}
 
 .lexend-bold {
   font-family: "Lexend", sans-serif;

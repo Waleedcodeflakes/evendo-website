@@ -5,13 +5,10 @@ import zap from '../../../assets/icons/zap.svg'
 import layers from '../../../assets/icons/layers.svg'
 import tickBlue from '../../../assets/icons/Check icon.svg'
 import tickGrey from '../../../assets/icons/check-circle-grey.svg'
-import { useNavigate } from 'react-router-dom';
 
-const Pricing = ({bgColor, my, onScroll, setPackageName}) => {
+const Pricing = ({bgColor, my, onScroll, setPackageName, setShowSignup}) => {
 
     const [isActive, setIsActive] = useState(false)
-    const navigate = useNavigate();
-    // const [packageName, setPackageName] = useState('')
     
     const plans = [
         {
@@ -117,7 +114,18 @@ const Pricing = ({bgColor, my, onScroll, setPackageName}) => {
                         ))}
                     </div>
                     <div>
-                        <button onClick={() => {onScroll(); navigate(''); setPackageName(plan.title)}} className='text-white poppins-semibold cursor-pointer text-[14px] md:text-[16px] py-3 w-full rounded-[8px] mt-10 bg-[#3182ED]'>Get started</button>
+                        <button
+                        onClick={() => {
+                            if (setShowSignup) {
+                            setShowSignup(true); // only if passed
+                            } else {
+                            onScroll(); // fallback scroll
+                            }
+                            setPackageName(plan.title);
+                        }}
+                        
+                        // onClick={() => {setShowSignup(true); onScroll(); setPackageName(plan.title);}} 
+                        className='text-white poppins-semibold cursor-pointer text-[14px] md:text-[16px] py-3 w-full rounded-[8px] mt-10 bg-[#3182ED]'>Get started</button>
                     </div>
                 </MOTION.div>
                 </AnimatePresence>

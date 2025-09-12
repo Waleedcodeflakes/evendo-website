@@ -3,17 +3,22 @@ import { motion as MOTION, AnimatePresence } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import FeaturesLeft from '../FeaturesLeft/FeaturesLeft'
 import FeaturesRight from '../FeaturesRight/FeaturesRight'
-import firstSection from '../../../assets/img/young-model.svg'
-import chats from '../../../assets/img/chats.svg'
+import firstSection from '../../../assets/img/young-model.webp'
+import chats from '../../../assets/img/Communication 6.svg'
 import invoices from '../../../assets/img/budget.svg'
-import memoryBank from '../../../assets/img/memoryBank2.svg'
-import handoffs from '../../../assets/img/handoffs.svg'
+import memoryBank from '../../../assets/img/memoryBankLady.webp'
+import memoryBankAbs from '../../../assets/img/memoryBankAbs.svg'
 
 const AllVendors = () => {
 
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 0.2,
+        const { ref: ref, inView: inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+    });
+
+    const { ref: ref2, inView: inView2 } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
     });
 
   return (
@@ -62,19 +67,45 @@ const AllVendors = () => {
             desc="Automatically track payments, due dates, and vendor costs. See your entire event budget in real-time without switching spreadsheets. "
         />
         {/* memory bank */}
-        <FeaturesLeft
+        {/* <FeaturesLeft
             img={memoryBank}
             smallText = "Smart Vendor Management"
             title= "Vendor Memory Bank"
             desc="Every quote, conversation, and performance note saved forever. Plan your next event in minutes, not weeks, using your complete vendor history."
-        />
-        {/* handoffs */}
-        <FeaturesRight
-            img={handoffs}
-            smallText = "Smart Vendor Management"
-            title= "Seamless Handoffs"
-            desc={`Share vendor relationships with your team instantly. Save time on onboarding and training new team members with a swift handover.`}
-        />
+        /> */}
+        <section className='relative'>
+        <div className='w-full block sm:flex items-center justify-between gap-[64px]'>
+            <AnimatePresence>
+                <MOTION.div
+                ref={ref2}
+                animate={inView2 ? { x: 0, opacity: 1 } : {}}
+                transition={{ duration: 1, ease: "easeOut" }}
+                initial={{ x: -50, opacity: 0 }} 
+                exit={{ x: -50, opacity: 0 }}
+               className='w-full sm:w-[50%] relative my-[2rem] sm:my-0'>
+                    <div className='absolute right-0 top-0 sm:right-16 sm:top-12 z-10'>
+                        <img className='w-full' src={memoryBankAbs} alt="image" />
+                    </div>
+                    <div className="absolute w-[278px] h-[208px] top-18 right-16 rounded-full bg-[#3A85FC9E] blur-[214px]"></div>
+                    <img className='w-full' src={memoryBank} alt="image" />
+                </MOTION.div>
+            </AnimatePresence>
+            <AnimatePresence>
+                <MOTION.div
+                    ref={ref2}
+                    initial={{ x: 50, opacity: 0 }} 
+                    animate={inView2 ? { x: 0, opacity: 1 } : {}}
+                    exit={{ y: -50, opacity: 0 }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                    className='w-full sm:w-[50%] flex flex-col justify-center relative'>
+                    <div className="absolute w-[293px] h-[281px] top-0 right-5 rounded-full z-50 bg-[#A465FD66] blur-[144px]"></div>
+                    <p className='poppins-medium text-sm text-[#3182ED]'>Smart Vendor Management</p>
+                    <h3 className='poppins-semibold text-[30px] text-[#333]'>Vendor Memory Bank</h3>
+                    <p className='poppins-medium text-[18px] text-[#333333CC] w-[90%]'>Every quote, conversation, and performance note saved forever. Plan your next event in minutes, not weeks, using your complete vendor history.</p>
+                </MOTION.div>
+            </AnimatePresence>
+        </div>
+        </section>
         </div>
     </div>
   )

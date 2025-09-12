@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { motion as MOTION, AnimatePresence } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import Navbar from '../../Sections/Navbar/Navbar';
@@ -11,6 +11,8 @@ import Avatar3 from '../../../assets/img/Avatar3.svg'
 
 const FaqsPage = () => {
 
+    const [showSignup, setShowSignup] = useState(false)
+
   const { ref, inView } = useInView({
       triggerOnce: true,
       threshold: 0.2,
@@ -18,17 +20,20 @@ const FaqsPage = () => {
 
   return (
     <div>
-      <Navbar/>
-      <div className='mt-18 md:mt-50'>
-      <div className='w-[92%] m-auto mt-[96px] mb-[136px] relative text-center'>
-            <p className='text-[#3182ED] text-base poppins-medium'>FAQs</p>
-        <h2 className='poppins-semibold text-[30px] md:text-[40px] lg:text-[48px] text-[#101828] pt-3 pb-6'>We’re here to help</h2>
-        <p className='poppins-medium text-[20px] text-[#475467] mb-10'>Have questions? We’re here to help.</p>
-        <button className='poppins-medium text-base text-white rounded-[8px] py-3 px-5 bg-[#3182ED]'>Get started</button>
+      <Navbar showSignup={showSignup} setShowSignup={setShowSignup}/>
+      <div className='bg-[#3182ED0F] py-28'>
+        <AnimatePresence>
+      <MOTION.div
+        // initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -50, opacity: 0 }}transition={{ duration: 1, ease: "easeInOut" }} 
+      className='w-full m-auto relative text-center mt-22'>
+            <MOTION.p initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -50, opacity: 0 }}transition={{ duration: 1, ease: "easeInOut" }}  className='text-[#3182ED] text-base poppins-medium'>FAQs</MOTION.p>
+        <MOTION.h2 initial={{ y: 70, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -70, opacity: 0 }}transition={{ duration: 1, ease: "easeInOut" }}  className='poppins-semibold text-[30px] md:text-[40px] lg:text-[48px] text-[#101828] pt-2 pb-4'>We’re here to help</MOTION.h2>
+        <MOTION.p initial={{ y: 90, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -90, opacity: 0 }}transition={{ duration: 1, ease: "easeInOut" }}  className='poppins-medium text-[20px] text-[#475467] mb-10'>Have questions? We’re here to help.</MOTION.p>
+        <MOTION.button initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -100, opacity: 0 }}transition={{ duration: 1, ease: "easeInOut" }}  onClick={() => setShowSignup(true)} className='cursor-pointer poppins-medium text-base text-white rounded-[8px] py-3 px-5 bg-[#3182ED]'>Get started</MOTION.button>
+      </MOTION.div>
+      </AnimatePresence>
       </div>
-      </div>
-      <div className='bg-[#F9FAFB] w-full h-20'></div>
-      <FAQs my="44px" />
+      <FAQs my="54px" />
     <div className='bg-[#F9FAFB] w-full pt-[64px] pb-[96px]'>
       <AnimatePresence>
         <MOTION.div
@@ -40,7 +45,7 @@ const FaqsPage = () => {
         className='w-[85%] m-auto text-center bg-white rounded-[16px] p-8'>
             <div className='flex justify-center gap-2 mb-6 relative'>
                 <img className='w-[56px] h-[56px]' src={Avatar1} alt="avatar" />
-                <img className='w-[56px] h-[56px] absolute top-[-2px] z-20' src={Avatar2} alt="avatar" />
+                <img className='w-[56px] h-[56px] absolute top-[-2px] z-10' src={Avatar2} alt="avatar" />
                 <img className='w-[56px] h-[56px]' src={Avatar3} alt="avatar" />
             </div>
             <h2
@@ -49,7 +54,8 @@ const FaqsPage = () => {
             
             className='poppins-regular text-sm md:text-base lg:text-[18px] text-[#475467] mb-8'>Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
             <button
-            className='poppins-medium text-base text-white rounded-[8px] py-3 px-5 bg-[#3182ED]'>Get in touch</button>
+            onClick={() => setShowSignup(true)}
+            className='poppins-medium text-base text-white cursor-pointer rounded-[8px] py-3 px-5 bg-[#3182ED]'>Get in touch</button>
         </MOTION.div>
         </AnimatePresence>
     </div>

@@ -1,10 +1,14 @@
 import React from 'react'
 import { motion as MOTION, AnimatePresence } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
-import hub from '../../../assets/img/hub.svg'
-import finance from '../../../assets/img/finance.svg'
-import marketing from '../../../assets/img/marketing.svg'
-import relationship from '../../../assets/img/relationship.svg'
+import hub from '../../../assets/icons/vendors.svg'
+import finance from '../../../assets/icons/money-send.svg'
+import marketing from '../../../assets/icons/task.svg'
+import relationship from '../../../assets/icons/clock.svg'
+import hubMockup from '../../../assets/img/communication.svg'
+import financeMockup from '../../../assets/img/financeMockup.svg'
+import taskMockup from '../../../assets/img/taskMockup.svg'
+import relationshipMockup from '../../../assets/img/relationMockup.svg'
 
 const KeyFeatures = () => {
     const features = [
@@ -12,28 +16,28 @@ const KeyFeatures = () => {
             id: 1,
             icon: hub,
             title: "Vendor Communication Hub",
-            bgColor: "#3B44B714",
+            mockup: hubMockup,
             bullets: ["Unified inbox for all vendor conversations","Smart threading by event and vendor type","Alignment bucket to tag all agreed terms","Read receipts and approvals"]
         },
         {
             id: 2,
             icon: finance,
             title: "Financial Command Center",
-            bgColor: "#EFF7F2",
+            mockup: financeMockup,
             bullets: ["Real-time budget tracking per event","Centralized invoice organization","Payment deadline alerts","Vendor cost comparison tools within the same category "]
         },
         {
             id: 3,
             icon: marketing,
             title: "Task Management",
-            bgColor: "#72C2E924",
+            mockup: taskMockup,
             bullets: ["Shared vendor contacts and notes","Task assignments and deadlines","Permission-based access control"]
         },
         {
             id: 4,
             icon: relationship,
             title: "Relationship History",
-            bgColor: "#FFEFF5",
+            mockup: relationshipMockup,
             bullets: ["Searchable vendor database","Performance ratings and notes","Past event collaboration records"]
 
         },
@@ -71,21 +75,24 @@ const KeyFeatures = () => {
                 variants={container}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-            className='w-[92%] m-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-20'>
+            className='w-[92%] m-auto grid grid-cols-1 md:grid-cols-2 gap-8 row-gap-30 mb-[100px]'>
                 {features.map((feature) => (
                     <AnimatePresence key={feature.id}>
                     <MOTION.div
                     ref={ref}
                     variants={item}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                     className="flex flex-col items-start gap-6 py-5 px-6 rounded-[12px]" style={{backgroundColor: feature.bgColor}}>
+                     className="relative flex flex-col items-start gap-6 py-8 pb-18 px-6 rounded-[12px] bg-[#3182ED] text-white mb-[180px]">
                         <img className='w-10 h-10' src={feature.icon} alt={feature.title} />
-                        <h3 className='poppins-medium text-[20px] text-[#333333E5]'>{feature.title}</h3>
-                        <ul className='list-disc list-inside poppins-regular text-[#333333CC] text-base w-full sm:w-[60%]'>
+                        <h3 className='poppins-semibold text-[20px] text-[#fff]'>{feature.title}</h3>
+                        <ul className='list-disc list-inside poppins-regular text-[#fff] text-base w-full sm:w-[60%]'>
                             {feature.bullets.map((bullet, index) => (
                                 <li key={index} className='mb-2'>{bullet}</li>
                             ))}
                         </ul>
+                        <div className='absolute bottom-[-120px] left-0 flex w-full justify-center'>
+                            <img src={feature.mockup} alt="icon" />
+                        </div>
                     </MOTION.div>
                     </AnimatePresence>
                 ))}
